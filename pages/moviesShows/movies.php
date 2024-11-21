@@ -24,10 +24,7 @@
         >
         <ul class="header-list">
             <li>
-                <a href="#">Accueil</a>
-            </li>
-            <li>
-                <a href="#">Films</a>
+                <a href="../../index.php">Accueil</a>
             </li>
             <li>
                 <a href="#">Séries</a>

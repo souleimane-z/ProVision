@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <nav class="header-navbar">
+        <nav class="header-navbar" id="homepage">
             <img src="#"
                  alt="Logo - ProVision"
                  title="Logo - ProVision"
@@ -23,7 +23,7 @@
             >
             <ul class="header-list">
                 <li>
-                    <a href="#">Accueil</a>
+                    <a href="./index.php">Accueil</a>
                 </li>
                 <li>
                     <a href="pages/moviesShows/movies.php">Films</a>
