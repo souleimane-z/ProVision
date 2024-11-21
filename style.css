@@ -1,0 +1,66 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.slider {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    opacity: 0.5;
+    z-index: -1000;
+}
+
+.slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slider 15.2s infinite;
+}
+
+.slider .slide:nth-child(1) {
+    background-image: url('https://cdn.apollo.audio/one/media/66a2/6f7f/a7ce/1605/b581/b3c6/upcoming-disney-films-released-2024.jpg?quality=80&format=jpg&crop=5,7,746,1323&resize=crop');
+    animation-delay: 0s;
+}
+
+.slider .slide:nth-child(2) {
+    background-image: url('https://cdn.mos.cms.futurecdn.net/zyHm3uT4MrshAuTjb28buJ.jpg');
+    animation-delay: -3.8s;
+}
+
+.slider .slide:nth-child(3) {
+    background-image: url('https://www.boxofficepro.com/wp-content/uploads/2024/08/TOYSTORY5-ONLINE-USE_D23B_008_C.pub16-scaled.jpg');
+    animation-delay: -7.6s;
+}
+
+.slider .slide:nth-child(4) {
+    background-image: url('https://variety.com/wp-content/uploads/2024/08/Lilo.jpg');
+    animation-delay: -11.399999999999999s;
+}
+
+
+@keyframes slider {
+    0%, 20%, 100% {
+        opacity: 1;
+        animation-timing-function: ease;
+        z-index: 0;
+    }
+    25% {
+        opacity: 0;
+        animation-timing-function: step-end;
+        z-index: 0;
+    }
+    95% {
+        opacity: 1;
+        animation-timing-function: step-end;
+        z-index: -1;
+    }
+}
