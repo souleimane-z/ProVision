@@ -62,7 +62,6 @@
         </div>
     </div>
 </header>
-
 <!-- Icônes sur fontawesome.com -->
 <script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>
 </body>

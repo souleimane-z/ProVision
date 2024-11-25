@@ -37,7 +37,7 @@
             </ul>
 
             <div class="header-search">
-                <form action="#" method="get">
+                <form action="#" method="get" enctype="application/x-www-form-urlencoded">
                     <label for="searchBar"></label>
                     <input type="text" id="searchBar" placeholder="Rechercher..." required>
                     <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -62,8 +62,82 @@
 
                 <p class="banner-paragraph">Un monde d'histoires inconnus à la portée d'un clic!</p></div>
             </div>
+            <div>
+                <button class="btn-subscribe">s'abonner</button>
+            </div>
             </div>
     </header>
+    <main>
+        <section>
+            <h3>Explorez nos catégories</h3>
+            <div class="home-cards_container">
+                <div class="card">
+                    <div class="card-img">
+                        <div class="card-img_row">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image1" title="image1">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image2" title="image2">
+                        </div>
+                        <div class="card-img_row">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image3" title="image3">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image4" title="image4">
+                        </div>
+                    </div>
+                    <div class="card-explore">
+                        <h6>Comédie</h6>
+                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <div class="card-img_row">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image1" title="image1">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image2" title="image2">
+                        </div>
+                        <div class="card-img_row">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image3" title="image3">
+                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image4" title="image4">
+                        </div>
+                    </div>
+                    <div class="card-explore">
+                        <h6>Action</h6>
+                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <div class="card-img_row">
+                            <img src="#" alt="image1" title="image1">
+                            <img src="#" alt="image2" title="image2">
+                        </div>
+                        <div class="card-img_row">
+                            <img src="#" alt="image3" title="image3">
+                            <img src="#" alt="image4" title="image4">
+                        </div>
+                    </div>
+                    <div class="card-explore">
+                        <h6>Drame</h6>
+                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <div class="card-img_row">
+                            <img src="#" alt="image1" title="image1">
+                            <img src="#" alt="image2" title="image2">
+                        </div>
+                        <div class="card-img_row">
+                            <img src="#" alt="image3" title="image3">
+                            <img src="#" alt="image4" title="image4">
+                        </div>
+                    </div>
+                    <div class="card-explore">
+                        <h6>Sci-Fi</h6>
+                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Icônes sur fontawesome.com -->
     <script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>
