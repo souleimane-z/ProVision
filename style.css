@@ -14,6 +14,7 @@ body {
     color: var(--text);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 header {
     padding: 1rem;
@@ -85,13 +86,13 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-90%, -50%);
+    transform: translate(-95%, -50%);
 }
 .btn-subscribe {
     padding: 0.5rem 1rem;
     font-size: 1.3rem;
     font-weight: 700;
-    border-color: var(--primary);
+    border : 3px solid var(--primary);
     border-radius: 20px;
     color: var(--text);
     background-color: var(--background);
@@ -171,8 +172,10 @@ header {
 }
 .slider {
     overflow: hidden;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    padding: 0;
+    margin: 0;
     position: relative;
     opacity: 0.5;
     z-index: -1000;
@@ -185,7 +188,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     animation: slider 15.2s infinite;
 }
@@ -228,7 +231,21 @@ header {
         z-index: -1;
     }
 }
-
+/* *********************
+ * Section : Catégories
+ *********************** */
+.cards-categories .cards-categories-txt, .subscribeHome{
+    margin: 1rem;
+    padding: 1rem;
+}
+.cards-categories-txt h3, .subscribeHome h3  {
+    padding: 0;
+    font-size: 1.5rem;
+}
+.cards-categories-txt span,  .subscribeHome span {
+    padding: 0;
+    font-size: 0.8rem;
+}
 .home-cards_container {
     display: flex;
     flex-wrap: wrap;
@@ -244,8 +261,14 @@ header {
     border-radius: 10px;
     box-shadow: 3px 0 6px rgba(255,255,255,0.1);
     padding: 0.8rem;
-    background: rgba(0,0,0, 0.15);
+    background: rgba(0,0,0, 0.06);
     margin: 1rem;
+}
+.card:hover {
+    opacity: 0.9;
+    transition: 300ms ease-in-out;
+    transform: scale(1.1);
+    background: rgba(0,0,0, 0.3);
 }
 .card-img {
     padding: 10px;
@@ -278,7 +301,7 @@ header {
 .card-explore button {
     padding: 0 2px;
     color: var(--primary);
-    background-color: var(--background);
+    background-color: transparent;
     height: 1.3rem;
     margin: 0 auto;
     border: none;
@@ -286,10 +309,80 @@ header {
     cursor: pointer;
 }
 .card-explore button:hover {
+    background-color: rgba(34,34,34,0.9);
     color: var(--secondary);
     transform: scale(1.3);
     transition: 350ms ease-in-out;
 }
 .card-explore button i {
     font-size: 1rem;
+}
+
+.fade_rule {
+    height: 3px;
+    border-radius : 50%;
+    border-top: 4px solid #ccc;
+    width: 80%;
+    margin: 0 auto;
+}
+/* ************************
+ * Section : subscribeHome
+ ************************** */
+
+.subscribeHome-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 2rem;
+    justify-content: center;
+}
+.subscribeHome-card {
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid rgba(211, 93, 9, 0.3);
+    box-shadow: 3px 0 6px rgba(255,255,255,0.1);
+    padding: 0.8rem;
+    background: rgba(0,0,0, 0.06);
+}
+.subscribeHome-txt{
+    display: flex;
+    flex-direction: column;
+
+}
+.subscribeHome-title, .subscribeHome-description, .subscribeHome-price {
+    margin: 1rem;
+}
+
+.subscribeHome-title {
+    font-size: 1.2rem!important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.subscribeHome-btn {
+    display: flex;
+    justify-content: center;
+}
+.subscribeHome-btn button {
+    color: var(--text);
+    margin: 1rem 0 0 0;
+    padding: 7px;
+    border: 2px solid var(--secondary);
+    border-radius: 5px;
+    font-weight: 800;
+    background: var(--background);
+    background-color: var(--background);
+    background-image: linear-gradient(75deg, var(--secondary) 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 600%;
+    transition: background 430ms ease-in-out;
+}
+.subscribeHome-btn button:hover {
+    cursor: pointer;
+    background-position: 0;
+}
+.subscribeHome-btn button a {
+    text-decoration: none;
+    color: var(--text);
+
 }

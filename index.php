@@ -68,10 +68,14 @@
             </div>
     </header>
     <main>
-        <section>
-            <h3>Explorez nos catégories</h3>
+        <section class="cards-categories">
+            <div class="cards-categories-txt">
+                <h3>Explorez nos catégories</h3>
+                <span>Texte à modifier</span>
+            </div>
             <div class="home-cards_container">
-                <div class="card"> <!-- COMÉDIE -->
+                <!-- COMÉDIE -->
+                <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
                             <img src="/assets/img/Movies/No%20Hard%20Feelings%20(2023).webp"
@@ -91,7 +95,8 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <div class="card"> <!-- ACTION -->
+                <!-- ACTION -->
+                <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
                             <img src="/assets/img/Movies/Gladiator%20II%20(2024).webp"
@@ -111,7 +116,8 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <div class="card">  <!-- DRAME -->
+                <!-- DRAME -->
+                <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
                             <img src="/assets/img/Movies/Oppenheimer%20(2023).webp"
@@ -131,7 +137,8 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <div class="card"> <!-- SCI-FI -->
+                <!-- SCI-FI -->
+                <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
                             <img src="/assets/img/Movies/Avatar-%20The%20Way%20of%20Water%20(2022).webp"
@@ -149,6 +156,45 @@
                     <div class="card-explore">
                         <h6>Sci-Fi</h6>
                         <button><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="fade_rule"></div>
+
+        <section class="subscribeHome">
+            <div>
+                <h3>Choisissez le forfait qui vous convient</h3>
+                <span>texte à modifier</span>
+            </div>
+            <div class="subscribeHome-container">
+                <div class="subscribeHome-card">
+                    <div class="subscribeHome-txt">
+                        <span class="subscribeHome-title">Standart</span>
+                        <span class="subscribeHome-description">Texte à modifier</span>
+                        <span class="subscribeHome-price">10,99/mois ou 110/an</span>
+                    </div>
+                    <div class="subscribeHome-btn">
+                        <button id="tryYourself">
+                            <a href="#">
+                                Essai Gratuit
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <div class="subscribeHome-card">
+                    <div class="subscribeHome-txt">
+                        <span class="subscribeHome-title">Prenium</span>
+                        <span class="subscribeHome-description">Texte à modifier</span>
+                        <span class="subscribeHome-price">14,99/mois ou 170/an</span>
+                    </div>
+                    <div class="subscribeHome-btn">
+                        <button id="tryYourself">
+                            <a href="#">
+                                Essai Gratuit
+                            </a>
+                        </button>
                     </div>
                 </div>
             </div>
