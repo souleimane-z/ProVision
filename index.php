@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav class="header-navbar" id="homepage">
-            <img src="#"
+            <img src="./assets/img/Logo/VisionPro.webp"
                  alt="Logo - ProVision"
                  title="Logo - ProVision"
                  class="header-logo"
@@ -53,14 +53,14 @@
             </div>
         </nav>
         <div class="header-banner">
-            <div class="slider">
+            <div class="slider"> <!-- Images qui défilent en arrière plan du header -->
                 <div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div>
             </div>
             <div>
             <div class="banner-txt">
                 <h1 class="banner-title">ProVision</h1>
 
-                <p class="banner-paragraph">Un monde d'histoires inconnus à la portée d'un clic!</p></div>
+                <p class="banner-paragraph">Un monde d'histoires inconnues à la portée d'un clic!</p></div>
             </div>
             <div>
                 <button class="btn-subscribe">s'abonner</button>
@@ -71,15 +71,19 @@
         <section>
             <h3>Explorez nos catégories</h3>
             <div class="home-cards_container">
-                <div class="card">
+                <div class="card"> <!-- COMÉDIE -->
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image1" title="image1">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image2" title="image2">
+                            <img src="/assets/img/Movies/No%20Hard%20Feelings%20(2023).webp"
+                                 alt="No Hard Feelings (2023)" title="No Hard Feelings (2023)">
+                            <img src="/assets/img/Movies/The%20Banshees%20of%20Inisherin%20(2022).webp"
+                                 alt="The Banshees of Inisherin (2022)" title="The Banshees of Inisherin (2022)">
                         </div>
                         <div class="card-img_row">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image3" title="image3">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image4" title="image4">
+                            <img src="/assets/img/Movies/The%20Unbearable%20Weight%20of%20Massive%20Talent%20(2022).webp"
+                                 alt="The Unbearable Weight of Massive Talent (2022)" title="The Unbearable Weight of Massive Talent (2022)">
+                            <img src="/assets/img/Movies/The%20Holdovers%20(2023).webp"
+                                 alt="The Holdovers (2023)" title="The Holdovers (2023)">
                         </div>
                     </div>
                     <div class="card-explore">
@@ -87,15 +91,19 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card"> <!-- ACTION -->
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image1" title="image1">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image2" title="image2">
+                            <img src="/assets/img/Movies/Gladiator%20II%20(2024).webp"
+                                 alt="Gladiator II (2024)" title="Gladiator II (2024)">
+                            <img src="/assets/img/Movies/Top%20Gun-%20Maverick%20(2022).webp"
+                                 alt="Top Gun- Maverick (2022)" title="Top Gun- Maverick (2022)">
                         </div>
                         <div class="card-img_row">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image3" title="image3">
-                            <img src="https://www.huntlancer.com/wp-content/uploads/2020/08/Mirna-Akram-Pulp-Fiction-Movie-Poster-Art.jpg" alt="image4" title="image4">
+                            <img src="/assets/img/Movies/Everything%20Everywhere%20All%20at%20Once%20(2022).webp"
+                                 alt="Everything Everywhere All at Once (2022)" title="Everything Everywhere All at Once (2022)">
+                            <img src="/assets/img/Movies/Bullet%20Train%20(2022).webp"
+                                 alt="Bullet Train (2022)" title="Bullet Train (2022)">
                         </div>
                     </div>
                     <div class="card-explore">
@@ -103,15 +111,19 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card">  <!-- DRAME -->
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="#" alt="image1" title="image1">
-                            <img src="#" alt="image2" title="image2">
+                            <img src="/assets/img/Movies/Oppenheimer%20(2023).webp"
+                                 alt="Oppenheimer (2023)" title="Oppenheimer (2023)">
+                            <img src="/assets/img/Movies/Killers%20of%20the%20Flower%20Moon%20(2023).webp"
+                                 alt="Killers of the Flower Moon (2023)" title="Killers of the Flower Moon (2023)">
                         </div>
                         <div class="card-img_row">
-                            <img src="#" alt="image3" title="image3">
-                            <img src="#" alt="image4" title="image4">
+                            <img src="/assets/img/Movies/The%20Whale%20(2022).webp"
+                                 alt="The Whale (2022)" title="The Whale (2022)">
+                            <img src="/assets/img/Movies/All%20Quiet%20on%20the%20Western%20Front%20(2022).webp"
+                                 alt="All Quiet on the Western Front (2022)" title="All Quiet on the Western Front (2022)">
                         </div>
                     </div>
                     <div class="card-explore">
@@ -119,15 +131,19 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card"> <!-- SCI-FI -->
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="#" alt="image1" title="image1">
-                            <img src="#" alt="image2" title="image2">
+                            <img src="/assets/img/Movies/Avatar-%20The%20Way%20of%20Water%20(2022).webp"
+                                 alt="Avatar- The Way of Water (2022)" title="Avatar- The Way of Water (2022)">
+                            <img src="/assets/img/Movies/The%20Batman%20(2022).webp"
+                                 alt="The Batman (2022)" title="The Batman (2022)">
                         </div>
                         <div class="card-img_row">
-                            <img src="#" alt="image3" title="image3">
-                            <img src="#" alt="image4" title="image4">
+                            <img src="/assets/img/Movies/Deadpool%20&%20Wolverine%20(2024).webp"
+                                 alt="Deadpool & Wolverine (2024)" title="Deadpool & Wolverine (2024)">
+                            <img src="/assets/img/Movies/Dune-%20Part%20Two%20(2024).webp"
+                                 alt="Dune- Part Two (2024)" title="Dune- Part Two (2024)">
                         </div>
                     </div>
                     <div class="card-explore">
