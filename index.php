@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav class="header-navbar" id="homepage">
-            <img src="./assets/img/Logo/VisionPro.webp"
+            <img src="./assets/img/Logo/logo-cropped.svg"
                  alt="Logo - ProVision"
                  title="Logo - ProVision"
                  class="header-logo"
