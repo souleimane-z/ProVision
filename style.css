@@ -121,6 +121,7 @@ header {
 .banner-paragraph {
     font-weight: 600;
     font-size: 1.8rem;
+    width: 100%;
 }
 .header-auth {
     display: flex;
@@ -276,6 +277,7 @@ header {
 .card-img_row {
     display: flex;
     justify-content: center;
+    width: 100%;
     gap: 10px;
 }
 .card-img_row img {
@@ -309,7 +311,7 @@ header {
     cursor: pointer;
 }
 .card-explore button:hover {
-    background-color: rgba(34,34,34,0.9);
+    background-color: transparent;
     color: var(--secondary);
     transform: scale(1.3);
     transition: 350ms ease-in-out;

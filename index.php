@@ -199,7 +199,14 @@
                 </div>
             </div>
         </section>
+
+        <div class="fade_rule"></div>
+
+
     </main>
+    <footer>
+        <!-- EXEMPLE : https://codepen.io/sdavidprince/pen/GRbVomO -->
+    </footer>
 
     <!-- Icônes sur fontawesome.com -->
     <script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>
