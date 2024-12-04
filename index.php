@@ -9,6 +9,7 @@
     <meta name="keywords" content="streaming vidéo, ProVision, plateforme de streaming, apprentissage en ligne, innovation, formation en ligne, vidéos éducatives, contenus interactifs, streaming HD, cours en ligne, vidéos à la demande, e-learning, tutoriels en ligne, innovation technologique, savoir-faire, streaming pédagogique, vidéos professionnelles, contenus exclusifs, plateforme de formation, éducation numérique, skill learning, amélioration des compétences, vision professionnelle, diffusion en continu">
     <meta name="author" content="Souleimane, Hugo, Nassim">
     <title>Accueil | ProVision</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -204,8 +205,57 @@
 
 
     </main>
-    <footer>
-        <!-- EXEMPLE : https://codepen.io/sdavidprince/pen/GRbVomO -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Accueil</h4>
+                    <ul>
+                        <li><a href="#">Catégories</a></li>
+                        <li><a href="#">Prix</a></li>
+                        <li><a href="#">Films</a></li>
+                        <li><a href="#">Séries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>À Propos</h4>
+                    <ul>
+                        <li><a href="#">Nous contacter</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Appareils</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Abonnement</h4>
+                    <ul>
+                        <li><a href="#">Les Abonnements</a></li>
+                        <li><a href="#">Les Nouveautés</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Nous suivre</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fade_rule"></div>
+        <div class="footer-legal">
+            <div class="footer-copy">
+                <a href="#">copyrights&#169;</a>
+            </div>
+            <div class="footer-legalinfos">
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Politique</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
     </footer>
 
     <!-- Icônes sur fontawesome.com -->
