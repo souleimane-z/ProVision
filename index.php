@@ -53,6 +53,9 @@
                 </button>
             </div>
         </nav>
+        <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="header-banner">
             <div class="slider"> <!-- Images qui défilent en arrière plan du header -->
                 <div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div>
@@ -165,7 +168,7 @@
         <div class="fade_rule"></div>
 
         <section class="subscribeHome">
-            <div>
+            <div class="subscribeHome-text">
                 <h3>Choisissez le forfait qui vous convient</h3>
                 <span>texte à modifier</span>
             </div>
@@ -260,5 +263,12 @@
 
     <!-- Icônes sur fontawesome.com -->
     <script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>
+
+    <!-- Menu hamburger pour le responsive -->
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.header-list').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
