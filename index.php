@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="style.css" />
     <meta name="description" content="">
     <meta name="keywords" content="streaming vidéo, ProVision, plateforme de streaming, apprentissage en ligne, innovation, formation en ligne, vidéos éducatives, contenus interactifs, streaming HD, cours en ligne, vidéos à la demande, e-learning, tutoriels en ligne, innovation technologique, savoir-faire, streaming pédagogique, vidéos professionnelles, contenus exclusifs, plateforme de formation, éducation numérique, skill learning, amélioration des compétences, vision professionnelle, diffusion en continu">
     <meta name="author" content="Souleimane, Hugo, Nassim">
@@ -16,7 +15,13 @@
 </head>
 <body>
     <header>
+
         <nav class="header-navbar" id="homepage">
+            <!-- Menu hamburger Responsive -->
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <img src="./assets/img/Logo/logo-cropped.svg"
                  alt="Logo - ProVision"
                  title="Logo - ProVision"
@@ -41,6 +46,7 @@
                 <form action="#" method="get" enctype="application/x-www-form-urlencoded">
                     <label for="searchBar"></label>
                     <input type="text" id="searchBar" placeholder="Rechercher..." required>
+
                     <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -52,15 +58,16 @@
                     <i class="fa-solid fa-user-plus"></i>
                 </button>
             </div>
+
         </nav>
-        <button class="nav-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
+
         <div class="header-banner">
-            <div class="slider"> <!-- Images qui défilent en arrière plan du header -->
+            <!-- Images qui défilent en arrière plan du header -->
+            <div class="slider">
                 <div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div>
             </div>
             <div>
+             <!-- Texte devant les images -->
             <div class="banner-txt">
                 <h1 class="banner-title">ProVision</h1>
 
@@ -175,15 +182,13 @@
             <div class="subscribeHome-container">
                 <div class="subscribeHome-card">
                     <div class="subscribeHome-txt">
-                        <span class="subscribeHome-title">Standart</span>
+                        <span class="subscribeHome-title">Standard</span>
                         <span class="subscribeHome-description">Texte à modifier</span>
-                        <span class="subscribeHome-price">10,99/mois ou 110/an</span>
+                        <span class="subscribeHome-price">10,99 &euro;/mois ou 110 &euro;/an</span>
                     </div>
                     <div class="subscribeHome-btn">
-                        <button id="tryYourself">
-                            <a href="#">
+                        <button class="tryYourself" id="standard">
                                 Essai Gratuit
-                            </a>
                         </button>
                     </div>
                 </div>
@@ -191,20 +196,16 @@
                     <div class="subscribeHome-txt">
                         <span class="subscribeHome-title">Prenium</span>
                         <span class="subscribeHome-description">Texte à modifier</span>
-                        <span class="subscribeHome-price">14,99/mois ou 170/an</span>
+                        <span class="subscribeHome-price">14,99 &euro;/mois ou 170 &euro;/an</span>
                     </div>
                     <div class="subscribeHome-btn">
-                        <button id="tryYourself">
-                            <a href="#">
+                        <button class="tryYourself" id="prenium">
                                 Essai Gratuit
-                            </a>
                         </button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <div class="fade_rule"></div>
 
 
     </main>
@@ -247,8 +248,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="fade_rule"></div>
         <div class="footer-legal">
             <div class="footer-copy">
                 <a href="#">copyrights&#169;</a>
