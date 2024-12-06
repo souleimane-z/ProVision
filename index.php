@@ -14,52 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- Include : Barre de Navigation -->
+<?php include 'includes/nav.php'; ?>
     <header>
 
-        <nav class="header-navbar" id="homepage">
-            <!-- Menu hamburger Responsive -->
-            <button class="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <img src="./assets/img/Logo/logo-cropped.svg"
-                 alt="Logo - ProVision"
-                 title="Logo - ProVision"
-                 class="header-logo"
-            >
-            <ul class="header-list">
-                <li>
-                    <a href="./index.php">Accueil</a>
-                </li>
-                <li>
-                    <a href="pages/moviesShows/movies.php">Films</a>
-                </li>
-                <li>
-                    <a href="#">Séries</a>
-                </li>
-                <li>
-                    <a href="#">Abonnement</a>
-                </li>
-            </ul>
-
-            <div class="header-search">
-                <form action="#" method="get" enctype="application/x-www-form-urlencoded">
-                    <label for="searchBar"></label>
-                    <input type="text" id="searchBar" placeholder="Rechercher..." required>
-
-                    <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
-            <div class="header-auth">
-                <button class="btn-login" title="Se connecter">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                </button>
-                <button class="btn-signup" title="S'inscrire">
-                    <i class="fa-solid fa-user-plus"></i>
-                </button>
-            </div>
-
-        </nav>
 
         <div class="header-banner">
             <!-- Images qui défilent en arrière plan du header -->
@@ -76,7 +34,7 @@
             <div>
                 <button class="btn-subscribe">s'abonner</button>
             </div>
-            </div>
+        </div>
     </header>
     <main>
         <section class="cards-categories">

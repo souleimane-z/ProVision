@@ -127,9 +127,9 @@ header {
     font-size: 24px;
 }
 
-/* *********************
- * Section : Banner
- *********************** */
+    /* *********************
+     * Section : Banner
+     *********************** */
 .header-banner {
     position: relative;
     height: 80vh;
@@ -489,45 +489,65 @@ header {
     border: none;
     font-size: 24px;
 }
-
 @media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--text);
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0.5rem;
+    header {
+        position: relative;
+        z-index: 10;
+    }
+
+    .slider {
+        z-index: 1;
+    }
+
+    .header-navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        background: var(--background);
+    }
+
+    .header-logo {
+        align-self: flex-start;
     }
 
     .nav-toggle {
-        display: block;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+    }
+
+    .header-search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-auth {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
     }
 
     .header-list {
         display: none;
-        position: absolute;
-        top: 15%;
-        left: 0;
+        position: relative;
         width: 100%;
         background: var(--background);
-        padding: 1rem 0;
-        text-align: center;
-        z-index: 1000;
+        z-index: 99;
     }
 
     .header-list.active {
-        display: block;
-        padding: 0;
-        margin: 0 auto;
-        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .header-list li {
-        display: block;
-        margin: 1rem 0;
+    .banner-txt {
+        z-index: -1;
     }
 }
-
 

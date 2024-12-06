@@ -16,40 +16,9 @@
 </head>
 <body>
 <header>
-    <nav class="header-navbar">
-        <img src="#"
-             alt="Logo - ProVision"
-             title="Logo - ProVision"
-             class="header-logo"
-        >
-        <ul class="header-list">
-            <li>
-                <a href="../../index.php">Accueil</a>
-            </li>
-            <li>
-                <a href="#">Séries</a>
-            </li>
-            <li>
-                <a href="#">Abonnement</a>
-            </li>
-        </ul>
+    <!-- Include : Barre de Navigation -->
+    <?php include '../../includes/nav.php'; ?>
 
-        <div class="header-search">
-            <form action="#" method="get">
-                <label for="searchBar"></label>
-                <input type="text" id="searchBar" placeholder="Rechercher..." required>
-                <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="header-auth">
-            <button class="btn-login" title="Se connecter">
-                <i class="fa-solid fa-right-to-bracket"></i>
-            </button>
-            <button class="btn-signup" title="S'inscrire">
-                <i class="fa-solid fa-user-plus"></i>
-            </button>
-        </div>
-    </nav>
     <div class="header-banner">
         <div class="slider">
             <div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div>
