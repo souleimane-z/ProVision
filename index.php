@@ -43,19 +43,19 @@
                 <span>Texte à modifier</span>
             </div>
             <div class="home-cards_container">
-                <!-- COMÉDIE -->
+<!-- COMÉDIE -->
                 <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/No%20Hard%20Feelings%20(2023).webp"
+                            <img src="/assets/img/Movies/resize/No%20Hard%20Feelings%20(2023).webp"
                                  alt="No Hard Feelings (2023)" title="No Hard Feelings (2023)">
-                            <img src="/assets/img/Movies/The%20Banshees%20of%20Inisherin%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/The%20Banshees%20of%20Inisherin%20(2022).webp"
                                  alt="The Banshees of Inisherin (2022)" title="The Banshees of Inisherin (2022)">
                         </div>
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/The%20Unbearable%20Weight%20of%20Massive%20Talent%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/The%20Unbearable%20Weight%20of%20Massive%20Talent%20(2022).webp"
                                  alt="The Unbearable Weight of Massive Talent (2022)" title="The Unbearable Weight of Massive Talent (2022)">
-                            <img src="/assets/img/Movies/The%20Holdovers%20(2023).webp"
+                            <img src="/assets/img/Movies/resize/The%20Holdovers%20(2023).webp"
                                  alt="The Holdovers (2023)" title="The Holdovers (2023)">
                         </div>
                     </div>
@@ -64,19 +64,19 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <!-- ACTION -->
+<!-- ACTION -->
                 <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/Gladiator%20II%20(2024).webp"
+                            <img src="/assets/img/Movies/resize/Gladiator%20II%20(2024).webp"
                                  alt="Gladiator II (2024)" title="Gladiator II (2024)">
-                            <img src="/assets/img/Movies/Top%20Gun-%20Maverick%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/Top%20Gun-%20Maverick%20(2022).webp"
                                  alt="Top Gun- Maverick (2022)" title="Top Gun- Maverick (2022)">
                         </div>
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/Everything%20Everywhere%20All%20at%20Once%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/Everything%20Everywhere%20All%20at%20Once%20(2022).webp"
                                  alt="Everything Everywhere All at Once (2022)" title="Everything Everywhere All at Once (2022)">
-                            <img src="/assets/img/Movies/Bullet%20Train%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/Bullet%20Train%20(2022).webp"
                                  alt="Bullet Train (2022)" title="Bullet Train (2022)">
                         </div>
                     </div>
@@ -85,19 +85,19 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <!-- DRAME -->
+<!-- DRAME -->
                 <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/Oppenheimer%20(2023).webp"
+                            <img src="/assets/img/Movies/resize/Oppenheimer%20(2023).webp"
                                  alt="Oppenheimer (2023)" title="Oppenheimer (2023)">
-                            <img src="/assets/img/Movies/Killers%20of%20the%20Flower%20Moon%20(2023).webp"
+                            <img src="/assets/img/Movies/resize/Killers%20of%20the%20Flower%20Moon%20(2023).webp"
                                  alt="Killers of the Flower Moon (2023)" title="Killers of the Flower Moon (2023)">
                         </div>
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/The%20Whale%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/The%20Whale%20(2022).webp"
                                  alt="The Whale (2022)" title="The Whale (2022)">
-                            <img src="/assets/img/Movies/All%20Quiet%20on%20the%20Western%20Front%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/All%20Quiet%20on%20the%20Western%20Front%20(2022).webp"
                                  alt="All Quiet on the Western Front (2022)" title="All Quiet on the Western Front (2022)">
                         </div>
                     </div>
@@ -106,19 +106,19 @@
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-                <!-- SCI-FI -->
+<!-- SCI-FI -->
                 <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/Avatar-%20The%20Way%20of%20Water%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/Avatar-%20The%20Way%20of%20Water%20(2022).webp"
                                  alt="Avatar- The Way of Water (2022)" title="Avatar- The Way of Water (2022)">
-                            <img src="/assets/img/Movies/The%20Batman%20(2022).webp"
+                            <img src="/assets/img/Movies/resize/The%20Batman%20(2022).webp"
                                  alt="The Batman (2022)" title="The Batman (2022)">
                         </div>
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/Deadpool%20&%20Wolverine%20(2024).webp"
+                            <img src="/assets/img/Movies/resize/Deadpool%20&%20Wolverine%20(2024).webp"
                                  alt="Deadpool & Wolverine (2024)" title="Deadpool & Wolverine (2024)">
-                            <img src="/assets/img/Movies/Dune-%20Part%20Two%20(2024).webp"
+                            <img src="/assets/img/Movies/resize/Dune-%20Part%20Two%20(2024).webp"
                                  alt="Dune- Part Two (2024)" title="Dune- Part Two (2024)">
                         </div>
                     </div>
@@ -133,15 +133,19 @@
         <div class="fade_rule"></div>
 
         <section class="subscribeHome">
+
             <div class="subscribeHome-text">
                 <h3>Choisissez le forfait qui vous convient</h3>
-                <span>texte à modifier</span>
+                <span>Texte à modifier</span>
             </div>
+
             <div class="subscribeHome-container">
                 <div class="subscribeHome-card">
                     <div class="subscribeHome-txt">
                         <span class="subscribeHome-title">Standard</span>
-                        <span class="subscribeHome-description">Texte à modifier</span>
+                        <span class="subscribeHome-description">Full HD</span>
+                        <span class="subscribeHome-description">1 Écran</span>
+                        <span class="subscribeHome-description">Avec Pub</span>
                         <span class="subscribeHome-price">10,99 &euro;/mois ou 110 &euro;/an</span>
                     </div>
                     <div class="subscribeHome-btn">
@@ -153,7 +157,9 @@
                 <div class="subscribeHome-card">
                     <div class="subscribeHome-txt">
                         <span class="subscribeHome-title">Prenium</span>
-                        <span class="subscribeHome-description">Texte à modifier</span>
+                        <span class="subscribeHome-description">4K HDR</span>
+                        <span class="subscribeHome-description">4 Écran</span>
+                        <span class="subscribeHome-description">Sans Pub</span>
                         <span class="subscribeHome-price">14,99 &euro;/mois ou 170 &euro;/an</span>
                     </div>
                     <div class="subscribeHome-btn">
@@ -168,55 +174,8 @@
 
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Accueil</h4>
-                    <ul>
-                        <li><a href="#">Catégories</a></li>
-                        <li><a href="#">Prix</a></li>
-                        <li><a href="#">Films</a></li>
-                        <li><a href="#">Séries</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>À Propos</h4>
-                    <ul>
-                        <li><a href="#">Nous contacter</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Appareils</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Abonnement</h4>
-                    <ul>
-                        <li><a href="#">Les Abonnements</a></li>
-                        <li><a href="#">Les Nouveautés</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Nous suivre</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-legal">
-            <div class="footer-copy">
-                <a href="#">copyrights&#169;</a>
-            </div>
-            <div class="footer-legalinfos">
-                <a href="#">Conditions d'utilisation</a>
-                <a href="#">Politique</a>
-                <a href="#">Cookies</a>
-            </div>
-        </div>
-    </footer>
+    <!-- Include : Footer -->
+    <?php include 'includes/footer.php'; ?>
 
     <!-- Icônes sur fontawesome.com -->
     <script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>

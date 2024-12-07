@@ -364,6 +364,9 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.subscribeHome-description {
+    color: var(--secondary);
+}
 .subscribeHome-btn {
     display: flex;
     justify-content: center;
