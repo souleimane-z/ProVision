@@ -119,12 +119,16 @@ header {
     transition: color 0.3s;
 }
 
-.btn-login:hover, .btn-signup:hover {
+.btn-login a:hover, .btn-signup a:hover {
     color: var(--primary);
 }
 
 .btn-login i, .btn-signup i {
     font-size: 24px;
+}
+.header-auth a {
+    color: var(--text);
+    text-decoration: none;
 }
 
     /* *********************

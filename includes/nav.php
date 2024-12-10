@@ -1,7 +1,7 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);
-include "config.php";
-include "includes/functions.php";
+include_once __DIR__ . '/config.php';
+include_once __DIR__ . '/functions.php';;
 ?>
 <nav class="header-navbar" id="homepage">
         <!-- Voir config.php -->
@@ -12,7 +12,7 @@ include "includes/functions.php";
             Code qui dit "si nous sommes dans la page accueil ALORS ne pas afficher liens vers la page accueil
         -->
         <?php if($current_page !== 'index.php'): ?>
-            <li><a href="./index.php">Accueil</a></li>
+            <li><a href="/index.php">Accueil</a></li>
         <?php endif; ?>
 
         <?php if($current_page !== 'movies.php'): ?>
@@ -36,7 +36,7 @@ include "includes/functions.php";
     </div>
 
     <?php
-    displayAuthButtons($isLoggedIn, $logout_icon);
+    displayAuthButtons(null, $logout_icon);
     ?>
     <button class="nav-toggle">
         <i class="fas fa-bars"></i>
