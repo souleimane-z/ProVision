@@ -9,22 +9,22 @@ include_once __DIR__ . '/functions.php';;
 
     <ul class="header-list">
         <!--
-            Code qui dit "si nous sommes dans la page accueil ALORS ne pas afficher liens vers la page accueil
+            Code qui dit "si nous sommes dans la page accueil ALORS ne pas afficher liens vers la page accueil" etc
         -->
         <?php if($current_page !== 'index.php'): ?>
-            <li><a href="/index.php">Accueil</a></li>
+            <li><a href="<?php echo BASE_URL; ?>index.php">Accueil</a></li>
         <?php endif; ?>
 
         <?php if($current_page !== 'movies.php'): ?>
-            <li><a href="pages/moviesShows/movies.php">Films</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/pages/moviesShows/movies.php">Films</a></li>
         <?php endif; ?>
 
         <?php if($current_page !== 'shows.php'): ?>
-            <li><a href="pages/moviesShows/shows.php">Séries</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/pages/moviesShows/shows.php">Séries</a></li>
         <?php endif; ?>
 
         <?php if($current_page !== 'subscription.php'): ?>
-            <li><a href="pages/subscription/subscription.php">Abonnement</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/pages/login.php">Abonnement</a></li>
         <?php endif; ?>
     </ul>
     <div class="header-search">

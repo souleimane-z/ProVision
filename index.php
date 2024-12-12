@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <meta name="description" content="">
     <meta name="keywords" content="streaming vidéo, ProVision, plateforme de streaming, apprentissage en ligne, innovation, formation en ligne, vidéos éducatives, contenus interactifs, streaming HD, cours en ligne, vidéos à la demande, e-learning, tutoriels en ligne, innovation technologique, savoir-faire, streaming pédagogique, vidéos professionnelles, contenus exclusifs, plateforme de formation, éducation numérique, skill learning, amélioration des compétences, vision professionnelle, diffusion en continu">
     <meta name="author" content="Souleimane, Hugo, Nassim">
@@ -15,7 +15,7 @@
 </head>
 <body>
 <!-- Include : Barre de Navigation -->
-<?php include 'includes/nav.php'; ?>
+<?php include_once __DIR__ . '/includes/nav.php'; ?>
     <header>
 
 
@@ -175,7 +175,7 @@
     </main>
 
     <!-- Include : Footer -->
-    <?php include 'includes/footer.php'; ?>
+    <?php include_once __DIR__ . '/includes/footer.php'; ?>
 
     <!-- Icônes sur fontawesome.com -->
     <script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>
