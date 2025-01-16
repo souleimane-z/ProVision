@@ -34,49 +34,54 @@ require_once __DIR__ . '/../../data/movies.php';
     </div>
 </header>
 <main>
-    <section class="newAddition sectionsMain">
-        <div class="subscribeHome-text sectionsMain_txt">
-            <h3>Nouvelles sorties</h3>
-        </div>
+    <div class="page-movies">
+        <div class="moviesTitle">Films</div>
 
-        <div class="home-cards_container">
-            <?php foreach ($newAddition as $movie): ?>
-                <div class="moviesCard">
-                    <div class="movies-img">
-                            <img src="<?php echo htmlspecialchars($movie['movieImg'] ?: 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'); ?>"
-                                 alt="<?php echo htmlspecialchars($movie['movieName']); ?>"
-                                 title="<?php echo htmlspecialchars($movie['movieName']); ?>">
-                    </div>
-                    <div class="moviesCardDetails">
-                        <span><i class="fa-solid fa-clock"></i><?php echo htmlspecialchars($movie['movieTiming']); ?></span>
-                        <span><i class="fa-solid fa-eye"></i><?php echo htmlspecialchars($movie['movieViewCount']); ?></span>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
 
-    <section class="trendingNow sectionsMain">
-        <div class="subscribeHome-text sectionsMain_txt">
-            <h3>Populaire en ce moment</h3>
-        </div>
+        <section class="newAddition sectionsMain">
+            <div class="subscribeHome-text sectionsMain_txt">
+                <h3>Nouvelles sorties</h3>
+            </div>
 
-        <div class="home-cards_container">
-            <?php foreach ($trendingNow as $movie): ?>
-                <div class="moviesCard">
-                    <div class="movies-img">
-                            <img src="<?php echo htmlspecialchars($movie['movieImg'] ?: 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'); ?>"
-                                 alt="<?php echo htmlspecialchars($movie['movieName']); ?>"
-                                 title="<?php echo htmlspecialchars($movie['movieName']); ?>">
+            <div class="movies-cards_container">
+                <?php foreach ($newAddition as $movie): ?>
+                    <div class="moviesCard">
+                        <div class="movies-img">
+                                <img src="<?php echo htmlspecialchars($movie['movieImg'] ?: 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'); ?>"
+                                     alt="<?php echo htmlspecialchars($movie['movieName']); ?>"
+                                     title="<?php echo htmlspecialchars($movie['movieName']); ?>">
+                        </div>
+                        <div class="moviesCardDetails">
+                            <span><i class="fa-solid fa-clock"></i><?php echo htmlspecialchars($movie['movieTiming']); ?></span>
+                            <span><i class="fa-solid fa-eye"></i><?php echo htmlspecialchars($movie['movieViewCount']); ?></span>
+                        </div>
                     </div>
-                    <div class="moviesCardDetails">
-                        <span><i class="fa-solid fa-clock"></i><?php echo htmlspecialchars($movie['movieTiming']); ?></span>
-                        <span><i class="fa-solid fa-eye"></i><?php echo htmlspecialchars($movie['movieViewCount']); ?></span>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <section class="trendingNow sectionsMain">
+            <div class="subscribeHome-text sectionsMain_txt">
+                <h3>Populaire en ce moment</h3>
+            </div>
+
+            <div class="movies-cards_container">
+                <?php foreach ($trendingNow as $movie): ?>
+                    <div class="moviesCard">
+                        <div class="movies-img">
+                                <img src="<?php echo htmlspecialchars($movie['movieImg'] ?: 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'); ?>"
+                                     alt="<?php echo htmlspecialchars($movie['movieName']); ?>"
+                                     title="<?php echo htmlspecialchars($movie['movieName']); ?>">
+                        </div>
+                        <div class="moviesCardDetails">
+                            <span><i class="fa-solid fa-clock"></i><?php echo htmlspecialchars($movie['movieTiming']); ?></span>
+                            <span><i class="fa-solid fa-eye"></i><?php echo htmlspecialchars($movie['movieViewCount']); ?></span>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
+        </section>
         </div>
-    </section>
 </main>
 
 <!-- Include : Footer -->

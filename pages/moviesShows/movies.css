@@ -1,14 +1,31 @@
 @import url('../../style.css');
-
-/* Style pour le conteneur des cartes */
-.home-cards_container {
+.page-movies {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 14px;
+}
+.moviesTitle {
+    font-weight: bold;
+    position: relative;
+    top: -20px;
+    left: 12px;
+    display: inline-block;
+    z-index: 123;
+    background: #e2d703;
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.movies-cards_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: clamp(1rem, 3vw, 2rem);
-    padding: 1rem;
 }
-
-/* Style spécifique pour les cartes de films */
+.sectionsMain_txt {
+    padding: 0 1rem;
+    margin: 0 1rem;
+}
 .moviesCard {
     background: rgba(0,0,0,0.1);
     border: 1px solid rgba(226, 215, 3, 0.3);
@@ -24,7 +41,6 @@
     background: rgba(0,0,0,0.3);
 }
 
-/* Style pour les images */
 .movies-img {
     position: relative;
     width: 100%;
@@ -47,7 +63,7 @@
     transform: scale(1.1);
 }
 
-/* Style pour les détails */
+
 .moviesCardDetails {
     display: flex;
     justify-content: space-between;
@@ -68,7 +84,7 @@
     color: var(--primary);
 }
 
-/* Alignements spécifiques pour le timing et le nombre de vues */
+
 .moviesCardDetails span:first-child {
     margin-left: 0.5rem;
 }

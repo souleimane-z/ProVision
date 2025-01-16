@@ -265,13 +265,13 @@ header {
     padding: 0;
     font-size: 1.5rem;
 }
-/* *********************
- * Section : Categories
- *********************** */
 .cards-categories-txt span,  .subscribeHome-text span {
     padding: 0;
     font-size: 0.8rem;
 }
+/* *********************
+ * Section : Categories
+ *********************** */
 
 .home-cards_container {
     display: grid;
