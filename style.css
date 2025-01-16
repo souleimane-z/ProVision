@@ -40,8 +40,8 @@ header {
 }
 
 .header-logo {
-    width: auto;
-    height: 40px;
+    width: 8%;
+    height: auto;
 }
 
 .header-navbar {
@@ -246,6 +246,13 @@ header {
     transition: background 430ms ease-in-out;
     cursor: pointer;
 }
+.subscribeHome-price2 {
+    font-size: xx-large;
+    margin: 1rem;
+}
+.subscribeHome-price-text {
+    font-size: medium;
+}
 
 .btn-subscribe:hover {
     background-position: 0;
@@ -254,6 +261,14 @@ header {
 /* *********************
  * Section : Categories
  *********************** */
+.categorie-text {
+    color: darkgrey;
+    font-size: 1rem !important;
+}
+.h3-text {
+    color: darkgrey;
+    font-size: 1rem !important;
+}
 .cards-categories, .subscribeHome {
     padding: clamp(1rem, 3vw, 2rem);
 }

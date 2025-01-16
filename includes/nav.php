@@ -24,7 +24,7 @@ include_once __DIR__ . '/functions.php';;
         <?php endif; ?>
 
         <?php if($current_page !== 'subscription.php'): ?>
-            <li><a href="pages/subscription/subscription.php">Abonnement</a></li>
+            <li><a href="../pages/subscription.php">Abonnement</a></li>
         <?php endif; ?>
     </ul>
     <div class="header-search">

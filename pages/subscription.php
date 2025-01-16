@@ -10,7 +10,6 @@
 </head>
 <body>
 <?php include_once __DIR__ . '/../includes/nav.php'; ?>
-
 <main class = "subscribe-page">
     <section class="subscribeHome">
 
@@ -56,7 +55,7 @@
         <?php
         $plans = [
             'Standard' =>[
-                'Prix' => '12,99€/Mois',
+                'Prix' => '12,99€/mois',
                 'Contenu' => "Accès à une plus large sélection de films et d'émissions, y compris la plupart des nouveautés et du contenu exclusif",
                 'Appareils' => "Regardez sur deux appareils en simultané ",
                 'Essai gratuit' => '7 Jours',
@@ -65,7 +64,7 @@
                 'Streaming hors-ligne' => 'None'
             ],
             'Premium' =>[
-                'Prix' => '14,99€/Mois',
+                'Prix' => '14,99€/mois',
                 'Contenu' => "Accès à la plus large sélection de films et d'émissions, y compris toutes les nouveautés et le visionnage hors ligne",
                 'Appareils' => "Regardez sur quatres appareils en simultané",
                 'Essai gratuit' => '7 Jours',

@@ -1,5 +1,5 @@
 <?php
-$logo = "<img src='https://ik.imagekit.io/souleimanez/ProVision/logo-cropped.svg' alt='Logo - ProVision' title='Logo - ProVision' class='header-logo'>";
+$logo = "<img src='../assets/img/Logo/logo-cropped.svg' alt='Logo - ProVision' title='Logo - ProVision' class='header-logo'>";
 
 /* Bouton : se déconnecter*/
 $isLoggedIn = false;

@@ -2,12 +2,16 @@
 body {
     box-sizing: border-box;
 }
-
+.header-logo {
+    width: 8%;
+    height: auto;
+}
 .h3-text {
-    color: whitesmoke;
+    color: darkgrey;
+    font-size: 1rem !important;
 }
 .subscribeHome-description2 {
-    color: whitesmoke;
+    color: darkgrey;
     margin: 1rem;
 }
 .subscribeHome-price2 {
@@ -63,4 +67,5 @@ body {
     display: flex;
     padding: 3rem;
 }
+
 

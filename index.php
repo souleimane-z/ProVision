@@ -40,7 +40,7 @@
         <section class="cards-categories">
             <div class="cards-categories-txt">
                 <h3>Explorez nos catégories</h3>
-                <span>Texte à modifier</span>
+                <span class="categorie-text">Que vous cherchiez une comédie pour rire, un drame pour réfléchir, ou un documentaire pour apprendre quelque chose de nouveau !</span>
             </div>
             <div class="home-cards_container">
 <!-- COMÉDIE -->
@@ -136,7 +136,7 @@
 
             <div class="subscribeHome-text">
                 <h3>Choisissez le forfait qui vous convient</h3>
-                <span>Texte à modifier</span>
+                <span class="h3-text">Rejoignez VisionPro et choisissez parmi nos options d’abonnement flexibles, adaptées à vos préférences de visionnage. Préparez-vous à un divertissement ininterrompu !</span>
             </div>
 
             <div class="subscribeHome-container">
@@ -144,9 +144,9 @@
                     <div class="subscribeHome-txt">
                         <span class="subscribeHome-title">Standard</span>
                         <span class="subscribeHome-description">Full HD</span>
-                        <span class="subscribeHome-description">1 Écran</span>
-                        <span class="subscribeHome-description">Avec Pub</span>
-                        <span class="subscribeHome-price">10,99 &euro;/mois ou 110 &euro;/an</span>
+                        <span class="subscribeHome-description">2 Écrans</span>
+                        <span class="subscribeHome-description">Avec Pubs</span>
+                        <span class="subscribeHome-price2">10.99 &euro;<span class="subscribeHome-price-text">/mois</span></span>
                     </div>
                     <div class="subscribeHome-btn">
                         <button class="tryYourself" id="standard">
@@ -156,11 +156,11 @@
                 </div>
                 <div class="subscribeHome-card">
                     <div class="subscribeHome-txt">
-                        <span class="subscribeHome-title">Prenium</span>
+                        <span class="subscribeHome-title">Premium</span>
                         <span class="subscribeHome-description">4K HDR</span>
-                        <span class="subscribeHome-description">4 Écran</span>
-                        <span class="subscribeHome-description">Sans Pub</span>
-                        <span class="subscribeHome-price">14,99 &euro;/mois ou 170 &euro;/an</span>
+                        <span class="subscribeHome-description">4 Écrans</span>
+                        <span class="subscribeHome-description">Sans Pubs</span>
+                        <span class="subscribeHome-price2">14,99 &euro;<span class="subscribeHome-price-text">/mois</span></span>
                     </div>
                     <div class="subscribeHome-btn">
                         <button class="tryYourself" id="prenium">
