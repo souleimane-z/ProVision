@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../index.php");
         exit;
     } else {
-        $errors[] = "Invalid username or password.";
+        $errors[] = "Mot de passe ou nom d'utilisateur invalide.";
     }
 }
 ?>
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main class="login-page">
     <section class="login-container">
-        <h2 class="login-title">Login</h2>
+        <h2 class="login-title">Se connecter</h2>
         <?php if (!empty($errors)): ?>
             <div class="error-messages">
                 <ul>
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="password" name="password" placeholder="Mot de passe..." required>
             </div>
             <div class="form-actions">
-                <button type="submit" class="btn-subscribe">Login</button>
+                <button type="submit" class="btn-subscribe">Se connecter</button>
             </div>
         </form>
     </section>

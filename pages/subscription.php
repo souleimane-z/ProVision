@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php include_once __DIR__ . '/../includes/nav.php'; ?>
+
 <main class = "subscribe-page">
     <section class="subscribeHome">
 

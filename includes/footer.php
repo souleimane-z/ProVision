@@ -7,9 +7,9 @@
                 <h4>Accueil</h4>
                 <ul>
                     <li><a href="#">Catégories</a></li>
-                    <li><a href="#">Prix</a></li>
-                    <li><a href="#">Films</a></li>
-                    <li><a href="#">Séries</a></li>
+                    <li><a href="/pages/subscription.php">Prix</a></li>
+                    <li><a href="/pages/moviesShows/movies.php">Films</a></li>
+                    <li><a href="/pages/moviesShows/shows.php">Séries</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -23,7 +23,7 @@
             <div class="footer-col">
                 <h4>Abonnement</h4>
                 <ul>
-                    <li><a href="#">Les Abonnements</a></li>
+                    <li><a href="/pages/subscription.php">Les Abonnements</a></li>
                     <li><a href="#">Les Nouveautés</a></li>
                 </ul>
             </div>
