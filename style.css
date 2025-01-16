@@ -247,24 +247,27 @@ header {
     cursor: pointer;
 }
 
+/* ***************************
+ * Section : Règles Générales
+ ***************************** */
 .btn-subscribe:hover {
     background-position: 0;
 }
 
-/* *********************
- * Section : Categories
- *********************** */
-.cards-categories, .subscribeHome {
+.sectionsMain {
     padding: clamp(1rem, 3vw, 2rem);
 }
-.cards-categories-txt, .subscribeHome-text{
+.sectionsMain_txt {
     margin: 1rem;
     padding: 1rem;
 }
-.cards-categories-txt h3, .subscribeHome-text h3  {
+.sectionsMain_txt h3  {
     padding: 0;
     font-size: 1.5rem;
 }
+/* *********************
+ * Section : Categories
+ *********************** */
 .cards-categories-txt span,  .subscribeHome-text span {
     padding: 0;
     font-size: 0.8rem;

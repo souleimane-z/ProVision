@@ -37,8 +37,8 @@
         </div>
     </header>
     <main>
-        <section class="cards-categories">
-            <div class="cards-categories-txt">
+        <section class="cards-categories sectionsMain">
+            <div class="cards-categories-txt  sectionsMain_txt">
                 <h3>Explorez nos catégories</h3>
                 <span>Texte à modifier</span>
             </div>
@@ -132,9 +132,9 @@
 
         <div class="fade_rule"></div>
 
-        <section class="subscribeHome">
+        <section class="subscribeHome sectionsMain">
 
-            <div class="subscribeHome-text">
+            <div class="subscribeHome-text  sectionsMain_txt">
                 <h3>Choisissez le forfait qui vous convient</h3>
                 <span>Texte à modifier</span>
             </div>
