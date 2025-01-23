@@ -1,3 +1,21 @@
+<?php
+require_once 'includes/tmdb_helper.php';
+
+
+$categories = [
+    'Comédie' => 35,
+    'Action' => 28,
+    'Drame' => 18,
+    'Sci-Fi' => 878
+];
+
+
+$moviesData = [];
+foreach ($categories as $name => $genreId) {
+    $moviesData[$name] = getMoviesByGenre($genreId);
+}
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -20,9 +38,13 @@
 
 
         <div class="header-banner">
-            <!-- Images qui défilent en arrière plan du header -->
+            <?php
+            $sliderMovies = array_slice(getTrendingFamilyMovies(), 0, 4);
+            ?>
             <div class="slider">
-                <div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div>
+                <?php foreach ($sliderMovies as $index => $movie): ?>
+                    <div class="slide" style="background-image: url('<?= TMDB_IMAGE_BASE_URL . str_replace('/w1200/', '/original/', $movie['backdrop_path']) ?>'); animation-delay: -<?= $index * 3.8 ?>s;"></div>
+                <?php endforeach; ?>
             </div>
             <div>
              <!-- Texte devant les images -->
@@ -36,99 +58,42 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="cards-categories sectionsMain">
-            <div class="cards-categories-txt  sectionsMain_txt">
-                <h3>Explorez nos catégories</h3>
-                <span>Texte à modifier</span>
-            </div>
-            <div class="home-cards_container">
-<!-- COMÉDIE -->
+<main>
+    <section class="cards-categories sectionsMain">
+        <div class="cards-categories-txt sectionsMain_txt">
+            <h3>Explorez nos catégories</h3>
+            <span>Les films les plus populaires par genre</span>
+        </div>
+
+        <div class="home-cards_container">
+            <?php foreach ($moviesData as $category => $movies): ?>
                 <div class="card">
                     <div class="card-img">
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/No%20Hard%20Feelings%20(2023).webp"
-                                 alt="No Hard Feelings (2023)" title="No Hard Feelings (2023)">
-                            <img src="/assets/img/Movies/resize/The%20Banshees%20of%20Inisherin%20(2022).webp"
-                                 alt="The Banshees of Inisherin (2022)" title="The Banshees of Inisherin (2022)">
+                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
+                                 alt="<?= $movies[0]['title'] ?>"
+                                 title="<?= $movies[0]['title'] ?>">
+                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[1]['poster_path'] ?>"
+                                 alt="<?= $movies[1]['title'] ?>"
+                                 title="<?= $movies[1]['title'] ?>">
                         </div>
                         <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/The%20Unbearable%20Weight%20of%20Massive%20Talent%20(2022).webp"
-                                 alt="The Unbearable Weight of Massive Talent (2022)" title="The Unbearable Weight of Massive Talent (2022)">
-                            <img src="/assets/img/Movies/resize/The%20Holdovers%20(2023).webp"
-                                 alt="The Holdovers (2023)" title="The Holdovers (2023)">
+                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
+                                 alt="<?= $movies[2]['title'] ?>"
+                                 title="<?= $movies[2]['title'] ?>">
+                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[3]['poster_path'] ?>"
+                                 alt="<?= $movies[3]['title'] ?>"
+                                 title="<?= $movies[3]['title'] ?>">
                         </div>
                     </div>
                     <div class="card-explore">
-                        <h6>Comédie</h6>
+                        <h6><?= $category ?></h6>
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
-<!-- ACTION -->
-                <div class="card">
-                    <div class="card-img">
-                        <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/Gladiator%20II%20(2024).webp"
-                                 alt="Gladiator II (2024)" title="Gladiator II (2024)">
-                            <img src="/assets/img/Movies/resize/Top%20Gun-%20Maverick%20(2022).webp"
-                                 alt="Top Gun- Maverick (2022)" title="Top Gun- Maverick (2022)">
-                        </div>
-                        <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/Everything%20Everywhere%20All%20at%20Once%20(2022).webp"
-                                 alt="Everything Everywhere All at Once (2022)" title="Everything Everywhere All at Once (2022)">
-                            <img src="/assets/img/Movies/resize/Bullet%20Train%20(2022).webp"
-                                 alt="Bullet Train (2022)" title="Bullet Train (2022)">
-                        </div>
-                    </div>
-                    <div class="card-explore">
-                        <h6>Action</h6>
-                        <button><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-<!-- DRAME -->
-                <div class="card">
-                    <div class="card-img">
-                        <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/Oppenheimer%20(2023).webp"
-                                 alt="Oppenheimer (2023)" title="Oppenheimer (2023)">
-                            <img src="/assets/img/Movies/resize/Killers%20of%20the%20Flower%20Moon%20(2023).webp"
-                                 alt="Killers of the Flower Moon (2023)" title="Killers of the Flower Moon (2023)">
-                        </div>
-                        <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/The%20Whale%20(2022).webp"
-                                 alt="The Whale (2022)" title="The Whale (2022)">
-                            <img src="/assets/img/Movies/resize/All%20Quiet%20on%20the%20Western%20Front%20(2022).webp"
-                                 alt="All Quiet on the Western Front (2022)" title="All Quiet on the Western Front (2022)">
-                        </div>
-                    </div>
-                    <div class="card-explore">
-                        <h6>Drame</h6>
-                        <button><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-<!-- SCI-FI -->
-                <div class="card">
-                    <div class="card-img">
-                        <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/Avatar-%20The%20Way%20of%20Water%20(2022).webp"
-                                 alt="Avatar- The Way of Water (2022)" title="Avatar- The Way of Water (2022)">
-                            <img src="/assets/img/Movies/resize/The%20Batman%20(2022).webp"
-                                 alt="The Batman (2022)" title="The Batman (2022)">
-                        </div>
-                        <div class="card-img_row">
-                            <img src="/assets/img/Movies/resize/Deadpool%20&%20Wolverine%20(2024).webp"
-                                 alt="Deadpool & Wolverine (2024)" title="Deadpool & Wolverine (2024)">
-                            <img src="/assets/img/Movies/resize/Dune-%20Part%20Two%20(2024).webp"
-                                 alt="Dune- Part Two (2024)" title="Dune- Part Two (2024)">
-                        </div>
-                    </div>
-                    <div class="card-explore">
-                        <h6>Sci-Fi</h6>
-                        <button><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <?php endforeach; ?>
+        </div>
+    </section>
 
         <div class="fade_rule"></div>
 

@@ -3,7 +3,7 @@
  *********************** */
 :root{
     --text: #FFF;
-    --background: #1c112c;
+    --background: #1a1a1a;
     --primary: #e2d703;
     --secondary: #d35d09;
     --accent: #000;
@@ -167,17 +167,13 @@ header {
  * Section : Slider
  *********************** */
 .slider {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    overflow: hidden;
     z-index: -1000;
-    opacity: 0.3;
+}
+.slider .slide {
+    background-size: cover;
+    background-position: center;
     filter: blur(4px) brightness(0.6);
 }
-
 .slider .slide {
     position: absolute;
     top: 0;
