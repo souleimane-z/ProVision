@@ -1,14 +1,24 @@
 <?php
 require_once __DIR__ . '/../config/tmdb.php';
+require_once __DIR__ . '/../config/api_config.php';
+
+
+$movieDetailsCache = [];
 
 if (!function_exists('getMoviesByGenre')) {
     function getMoviesByGenre($genreId) {
         $url = TMDB_BASE_URL . "/discover/movie?api_key=" . TMDB_API_KEY
             . "&with_genres=" . $genreId
             . "&language=fr-FR";
-        return makeApiRequest($url);
+        $movies = makeApiRequest($url);
+
+
+        return array_map(function($movie) {
+            return enrichMovieData($movie);
+        }, $movies);
     }
 }
+
 if (!function_exists('getTrendingFamilyMovies')) {
     function getTrendingFamilyMovies() {
         $url = TMDB_BASE_URL . "/discover/movie?api_key=" . TMDB_API_KEY
@@ -17,11 +27,34 @@ if (!function_exists('getTrendingFamilyMovies')) {
         return makeApiRequest($url);
     }
 }
+
+if (!function_exists('enrichMovieData')) {
+    function enrichMovieData($movie) {
+        global $movieDetailsCache;
+
+        if (!isset($movieDetailsCache[$movie['id']])) {
+            $details = getMovieDetails($movie['id']);
+            $movieDetailsCache[$movie['id']] = $details;
+        }
+
+        return array_merge($movie, $movieDetailsCache[$movie['id']]);
+    }
+}
+
 if (!function_exists('getMovieDetails')) {
     function getMovieDetails($movieId) {
+        global $movieDetailsCache;
+
+        if (isset($movieDetailsCache[$movieId])) {
+            return $movieDetailsCache[$movieId];
+        }
+
         $url = TMDB_BASE_URL . "/movie/" . $movieId . "?api_key=" . TMDB_API_KEY
             . "&language=fr-FR";
-        return makeApiRequest($url);
+        $details = makeApiRequest($url);
+        $movieDetailsCache[$movieId] = $details;
+
+        return $details;
     }
 }
 
@@ -37,7 +70,8 @@ if (!function_exists('getMoviesByRelease')) {
     function getMoviesByRelease() {
         $url = TMDB_BASE_URL . "/movie/now_playing?api_key=" . TMDB_API_KEY
             . "&language=fr-FR";
-        return makeApiRequest($url);
+        $movies = makeApiRequest($url);
+        return array_map('enrichMovieData', $movies);
     }
 }
 
@@ -45,21 +79,15 @@ if (!function_exists('getTrendingMovies')) {
     function getTrendingMovies() {
         $url = TMDB_BASE_URL . "/trending/movie/week?api_key=" . TMDB_API_KEY
             . "&language=fr-FR";
-        return makeApiRequest($url);
+        $movies = makeApiRequest($url);
+        return array_map('enrichMovieData', $movies);
     }
 }
 
 if (!function_exists('makeApiRequest')) {
     function makeApiRequest($url) {
-        $ch = curl_init($url);
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_VERBOSE => true,
-            CURLOPT_PROXY => '172.16.0.253',
-            CURLOPT_PROXYPORT => 3128,
-            CURLOPT_CAINFO => __DIR__ . '/cacert.pem'
-        ]);
+        $ch = curl_init();
+        curl_setopt_array($ch, getCurlOptions($url));
 
         $response = curl_exec($ch);
 
@@ -85,7 +113,7 @@ if (!function_exists('searchMovies')) {
         $url = TMDB_BASE_URL . "/search/movie?api_key=" . TMDB_API_KEY
             . "&query=" . urlencode($query)
             . "&language=fr-FR";
-        return makeApiRequest($url);
+        $movies = makeApiRequest($url);
+        return array_map('enrichMovieData', $movies);
     }
 }
-?>
