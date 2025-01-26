@@ -45,7 +45,8 @@ function generateHead($page, $additionalCSS = []) {
         }
         .swiper-button-prev {
             position: absolute;
-            top: 50%;
+            left: 30%;
+            top: 98%;
             transform: translateY(-50%);
             color: #fff;
             background: #e2d703;
@@ -55,7 +56,8 @@ function generateHead($page, $additionalCSS = []) {
         }
         .swiper-button-next {
             position: absolute;
-            top: 50%;
+            right: 30%;
+            top: 98%;
             transform: translateY(-50%);
             color: #fff;
             background: #e2d703;

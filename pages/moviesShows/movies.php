@@ -18,7 +18,14 @@ try {
         'Animation' => 16,
         'Aventure' => 12,
         'Crime' => 80,
-        'Fantastique' => 14
+        'Fantastique' => 14,
+        'Thriller' => 53,
+        'Horreur' => 27,
+        'Romance' => 10749,
+        'Guerre' => 10752,
+        'Histoire' => 36,
+        'Musique' => 10402,
+        'Documentaire' => 99,
     ];
 
     // Pour les nouveautés (5 films fixes + 5 slides de 5 films)
@@ -52,7 +59,7 @@ try {
             $sliderMovies = array_slice($api->getTrendingFamilyMovies(), 0, 4);
             foreach ($sliderMovies as $index => $movie):
                 ?>
-                <div class="slide" style="background-image: url('<?= TMDB_IMAGE_BASE_URL . str_replace('/w500/', '/original/', $movie['backdrop_path']) ?>'); animation-delay: -<?= $index * 3.8 ?>s;"></div>
+                <div class="slide" style="background-image: url('<?= TMDB_IMAGE_BASE_URL . str_replace('/w1500/', '/original/', $movie['backdrop_path']) ?>'); animation-delay: -<?= $index * 3.8 ?>s;"></div>
             <?php endforeach; ?>
         </div>
         <div>

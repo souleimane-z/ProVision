@@ -2,41 +2,62 @@
 require_once 'includes/meta_config.php';
 require_once 'includes/head.php';
 require_once 'classes/MovieAPI.php';
+require_once 'classes/ShowsAPI.php';
 
+$showsApi = ShowsAPI::getInstance();
 $api = MovieAPI::getInstance();
 $current_page = basename($_SERVER['PHP_SELF']);
+
 
 $categories = [
     'Comédie' => 35,
     'Action' => 28,
     'Drame' => 18,
-    'Sci-Fi' => 878
+    'Science-Fiction' => 878,
+    'Animation' => 16,
+    'Aventure' => 12,
+    'Crime' => 80,
+    'Fantastique' => 14,
+    'Thriller' => 53,
+    'Horreur' => 27,
+    'Romance' => 10749,
+    'Guerre' => 10752,
+    'Histoire' => 36,
+    'Musique' => 10402,
+    'Documentaire' => 99,
 ];
 
-try {
-    $moviesData = [];
-    foreach ($categories as $name => $genreId) {
-        $moviesData[$name] = $api->getMoviesByGenre($genreId);
-    }
-    $sliderMovies = array_slice($api->getTrendingFamilyMovies(), 0, 4);
-} catch (Exception $e) {
-    error_log($e->getMessage());
+$genreSeries = [];
+foreach ($categories as $name => $genreId) {
+    $genreSeries[$name] = $showsApi->getSeriesByGenre($genreId, 4);
+}
+
+$genreMovies = [];
+foreach ($categories as $name => $genreId) {
+    $genreMovies[$name] = $api->getMoviesByGenreAndYear($genreId, 2024, 4);
 }
 ?>
 
 <!doctype html>
 <html lang="fr">
 <?php generateHead($current_page); ?>
-
+<link rel="stylesheet" href="pages/moviesShows/movies.css">
 <body>
 <!-- Include : Barre de Navigation -->
-<?php include_once __DIR__ . '/includes/nav.php'; ?>
+
+<?php
+require_once 'includes/components/movies/card.php';
+include_once __DIR__ . '/includes/nav.php';
+?>
 
 <header>
     <div class="header-banner">
         <div class="slider">
-            <?php foreach ($sliderMovies as $index => $movie): ?>
-                <div class="slide" style="background-image: url('<?= TMDB_IMAGE_BASE_URL . str_replace('/w500/', '/original/', $movie['backdrop_path']) ?>'); animation-delay: -<?= $index * 3.8 ?>s;"></div>
+            <?php
+            $sliderMovies = array_slice($api->getTrendingFamilyMovies(), 0, 4);
+            foreach ($sliderMovies as $index => $movie):
+                ?>
+                <div class="slide" style="background-image: url('<?= TMDB_IMAGE_BASE_URL . str_replace('/w1500/', '/original/', $movie['backdrop_path']) ?>'); animation-delay: -<?= $index * 3.8 ?>s;"></div>
             <?php endforeach; ?>
         </div>
         <div>
@@ -51,42 +72,105 @@ try {
     </div>
 </header>
 <main>
-    <section class="cards-categories sectionsMain">
-        <div class="cards-categories-txt sectionsMain_txt">
-            <h3>Explorez nos catégories</h3>
-            <span>Les films les plus populaires par genre</span>
-        </div>
 
-        <div class="home-cards_container">
-            <?php foreach ($moviesData as $category => $movies): ?>
-                <div class="card">
-                    <div class="card-img">
-                        <div class="card-img_row">
-                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
-                                 alt="<?= $movies[0]['title'] ?>"
-                                 title="<?= $movies[0]['title'] ?>">
-                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[1]['poster_path'] ?>"
-                                 alt="<?= $movies[1]['title'] ?>"
-                                 title="<?= $movies[1]['title'] ?>">
-                        </div>
-                        <div class="card-img_row">
-                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
-                                 alt="<?= $movies[2]['title'] ?>"
-                                 title="<?= $movies[2]['title'] ?>">
-                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[3]['poster_path'] ?>"
-                                 alt="<?= $movies[3]['title'] ?>"
-                                 title="<?= $movies[3]['title'] ?>">
-                        </div>
+    <div class="page-movies">
+        <section class="genres sectionsMain">
+            <div class="subscribeHome-text sectionsMain_txt">
+                <h3>Explorer par genre</h3>
+            </div>
+
+            <div class="carousel-section">
+                <div class="swiper genreSwiper">
+                    <div class="swiper-wrapper">
+                        <?php foreach (array_chunk($genreMovies, 4, true) as $genreGroup): ?>
+                            <div class="swiper-slide">
+                                <div class="genre-grid">
+                                    <?php foreach ($genreGroup as $category => $movies): ?>
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <div class="card-img_row">
+                                                    <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
+                                                         alt="<?= $movies[0]['title'] ?>"
+                                                         title="<?= $movies[0]['title'] ?>">
+                                                    <img src="<?= TMDB_IMAGE_BASE_URL . $movies[1]['poster_path'] ?>"
+                                                         alt="<?= $movies[1]['title'] ?>"
+                                                         title="<?= $movies[1]['title'] ?>">
+                                                </div>
+                                                <div class="card-img_row second-row">
+                                                    <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
+                                                         alt="<?= $movies[2]['title'] ?>"
+                                                         title="<?= $movies[2]['title'] ?>">
+                                                    <img src="<?= TMDB_IMAGE_BASE_URL . $movies[3]['poster_path'] ?>"
+                                                         alt="<?= $movies[3]['title'] ?>"
+                                                         title="<?= $movies[3]['title'] ?>">
+                                                </div>
+                                            </div>
+                                            <div class="card-explore">
+                                                <h6><?= $category ?></h6>
+                                                <button><i class="fa-solid fa-chevron-right"></i></button>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="card-explore">
-                        <h6><?= $category ?></h6>
-                        <button><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
+            </div>
+            <div class="page-movies">
+                <section class="genres sectionsMain">
+                    <div class="subscribeHome-text sectionsMain_txt">
+                        <h3>Explorer par genre</h3>
+                    </div>
 
+                    <div class="carousel-section">
+                        <div class="swiper genreSwiper">
+                            <div class="swiper-wrapper">
+                                <?php foreach (array_chunk($genreSeries, 4, true) as $genreGroup): ?>
+                                    <div class="swiper-slide">
+                                        <div class="genre-grid">
+                                            <?php foreach ($genreGroup as $category => $series): ?>
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        <div class="card-img_row">
+                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
+                                                                 alt="<?= $movies[0]['title'] ?>"
+                                                                 title="<?= $movies[0]['title'] ?>">
+                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[1]['poster_path'] ?>"
+                                                                 alt="<?= $movies[1]['title'] ?>"
+                                                                 title="<?= $movies[1]['title'] ?>">
+                                                        </div>
+                                                        <div class="card-img_row second-row">
+                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
+                                                                 alt="<?= $movies[2]['title'] ?>"
+                                                                 title="<?= $movies[2]['title'] ?>">
+                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[3]['poster_path'] ?>"
+                                                                 alt="<?= $movies[3]['title'] ?>"
+                                                                 title="<?= $movies[3]['title'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-explore">
+                                                        <h6><?= $category ?></h6>
+                                                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
     <div class="fade_rule"></div>
 
     <section class="subscribeHome sectionsMain">

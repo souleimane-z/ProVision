@@ -1,9 +1,10 @@
 /* *********************
  * Variables & Reset
  *********************** */
+@import url('/pages/moviesShows/movies.css');
 :root{
     --text: #FFF;
-    --background: #1a1a1a;
+    --background: #1c112c;
     --primary: #e2d703;
     --secondary: #d35d09;
     --accent: #000;

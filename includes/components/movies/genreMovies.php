@@ -20,7 +20,7 @@
                                                  alt="<?= $movies[1]['title'] ?>"
                                                  title="<?= $movies[1]['title'] ?>">
                                         </div>
-                                        <div class="card-img_row">
+                                        <div class="card-img_row second-row">
                                             <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
                                                  alt="<?= $movies[2]['title'] ?>"
                                                  title="<?= $movies[2]['title'] ?>">
