@@ -45,6 +45,12 @@ function getPageMetas($current_page) {
             'keywords' => 'inscription, création compte, streaming',
             'css' => ['/style.css', '/pages/forms.css'],
         ],
+        'moviesDetails.php' => [
+          'title' => 'Détails du film',
+            'description' => 'Découvrez les détails du film',
+            'keywords' => 'film, détails, casting',
+            'css' => ['/style.css', '/pages/moviesShows/moviesDetails.css'],
+        ],
         'default' => [
             'title' => 'ProVision',
             'description' => 'ProVision - Votre plateforme de streaming',

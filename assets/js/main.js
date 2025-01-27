@@ -31,7 +31,9 @@ function initSwipers() {
     if (document.querySelector('.newMoviesSwiper')) {
         new Swiper('.newMoviesSwiper', swiperConfig);
     }
-
+    if (document.querySelector('.newShowsSwiper')) {
+        new Swiper('.newShowsSwiper', swiperConfig);
+    }
     if (document.querySelector('.trendingSwiper')) {
         new Swiper('.trendingSwiper', swiperConfig);
     }

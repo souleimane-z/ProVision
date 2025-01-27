@@ -26,10 +26,24 @@ $categories = [
     'Musique' => 10402,
     'Documentaire' => 99,
 ];
+$categoriesTV = [
+    'Comédie' => 35,
+    'Action & Aventure' => 10759,
+    'Animation' => 16,
+    'Sci-Fi & Fantasie' => 10765,
+    'Drame' => 18,
+    'Enfants' => 10762,
+    'Mystère' => 9648,
+    'News' => 10763,
+    'Realité' => 10764,
+    'Soap' => 10766,
+    'Talk' => 10767,
+    'Politique' => 10768,
+    ];
 
 $genreSeries = [];
-foreach ($categories as $name => $genreId) {
-    $genreSeries[$name] = $showsApi->getSeriesByGenre($genreId, 4);
+foreach ($categoriesTV as $name => $genreId) {
+    $genreSeries[$name] = $showsApi->getSeriesByGenreAndYear($genreId, 2024, 4);
 }
 
 $genreMovies = [];
@@ -76,7 +90,7 @@ include_once __DIR__ . '/includes/nav.php';
     <div class="page-movies">
         <section class="genres sectionsMain">
             <div class="subscribeHome-text sectionsMain_txt">
-                <h3>Explorer par genre</h3>
+                <h3>Explorez les catégories de films</h3>
             </div>
 
             <div class="carousel-section">
@@ -123,7 +137,7 @@ include_once __DIR__ . '/includes/nav.php';
             <div class="page-movies">
                 <section class="genres sectionsMain">
                     <div class="subscribeHome-text sectionsMain_txt">
-                        <h3>Explorer par genre</h3>
+                        <h3>Explorez les catégories des séries</h3>
                     </div>
 
                     <div class="carousel-section">
@@ -136,20 +150,34 @@ include_once __DIR__ . '/includes/nav.php';
                                                 <div class="card">
                                                     <div class="card-img">
                                                         <div class="card-img_row">
-                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
-                                                                 alt="<?= $movies[0]['title'] ?>"
-                                                                 title="<?= $movies[0]['title'] ?>">
-                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[1]['poster_path'] ?>"
-                                                                 alt="<?= $movies[1]['title'] ?>"
-                                                                 title="<?= $movies[1]['title'] ?>">
+                                                            <?php if (!empty($series[0]) && isset($series[0]['poster_path'])): ?>
+                                                                <img src="<?= TMDB_IMAGE_BASE_URL . $series[0]['poster_path'] ?>"
+                                                                     alt="<?= $series[0]['name'] ?>">
+                                                            <?php else: ?>
+                                                                <div class="placeholder-poster"></div>
+                                                            <?php endif; ?>
+
+                                                            <?php if (!empty($series[1]) && isset($series[1]['poster_path'])): ?>
+                                                                <img src="<?= TMDB_IMAGE_BASE_URL . $series[1]['poster_path'] ?>"
+                                                                     alt="<?= $series[1]['name'] ?>">
+                                                            <?php else: ?>
+                                                                <div class="placeholder-poster"></div>
+                                                            <?php endif; ?>
                                                         </div>
                                                         <div class="card-img_row second-row">
-                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
-                                                                 alt="<?= $movies[2]['title'] ?>"
-                                                                 title="<?= $movies[2]['title'] ?>">
-                                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[3]['poster_path'] ?>"
-                                                                 alt="<?= $movies[3]['title'] ?>"
-                                                                 title="<?= $movies[3]['title'] ?>">
+                                                            <?php if (!empty($series[2]) && isset($series[2]['poster_path'])): ?>
+                                                                <img src="<?= TMDB_IMAGE_BASE_URL . $series[2]['poster_path'] ?>"
+                                                                     alt="<?= $series[2]['name'] ?>">
+                                                            <?php else: ?>
+                                                                <div class="placeholder-poster"></div>
+                                                            <?php endif; ?>
+
+                                                            <?php if (!empty($series[3]) && isset($series[3]['poster_path'])): ?>
+                                                                <img src="<?= TMDB_IMAGE_BASE_URL . $series[3]['poster_path'] ?>"
+                                                                     alt="<?= $series[3]['name'] ?>">
+                                                            <?php else: ?>
+                                                                <div class="placeholder-poster"></div>
+                                                            <?php endif; ?>
                                                         </div>
                                                     </div>
                                                     <div class="card-explore">

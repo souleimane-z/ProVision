@@ -151,7 +151,35 @@ class MovieAPI {
         }
         return $movie;
     }
+    public function getMostPopularMovie2025() {
+        try {
+            $data = $this->makeRequest('/discover/movie', [
+                'sort_by' => 'popularity.desc',
+                'primary_release_year' => 2025,
+                'vote_count.gte' => 100,
+                'page' => 1
+            ]);
+
+            if (!isset($data['results'][0])) {
+                throw new Exception('Aucun film trouvé');
+            }
+
+            $movie = $data['results'][0];
+
+            // Obtenir les détails complets du film, y compris le casting
+            $details = $this->makeRequest("/movie/{$movie['id']}", [
+                'append_to_response' => 'credits'
+            ]);
+
+            return $details;
+
+        } catch (Exception $e) {
+            error_log("Erreur dans getMostPopularMovie2024: " . $e->getMessage());
+            return null;
+        }
+    }
 }
+
 
 class Cache {
     private $cacheDir;

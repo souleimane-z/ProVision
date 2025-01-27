@@ -4,7 +4,7 @@
 @import url('/pages/moviesShows/movies.css');
 :root{
     --text: #FFF;
-    --background: #1c112c;
+    --background: #1a1a1a;
     --primary: #e2d703;
     --secondary: #d35d09;
     --accent: #000;
@@ -283,11 +283,9 @@ header {
     border-radius: 10px;
     padding: 1rem;
     transition: all 0.3s ease;
-    transform: scale(0.9);
 }
 
 .card:hover {
-    transform: scale(1.05);
     background: rgba(0,0,0,0.3);
 }
 
@@ -326,7 +324,6 @@ header {
 }
 
 .card-explore button:hover {
-    transform: scale(1.2);
     color: var(--secondary);
 }
 
