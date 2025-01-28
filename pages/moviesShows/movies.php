@@ -28,13 +28,10 @@ try {
         'Documentaire' => 99,
     ];
 
-    // Pour les nouveautés (5 films fixes + 5 slides de 5 films)
     $newMovies = array_chunk($api->getMoviesByRelease(25), 5);
 
-    // Pour les tendances
     $trendingMovies = array_chunk($api->getTrendingMovies(25), 5);
 
-    // Pour les genres
     $genreMovies = [];
     foreach ($categories as $name => $genreId) {
         $genreMovies[$name] = $api->getMoviesByGenreAndYear($genreId, 2024, 4);

@@ -7,10 +7,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 try {
     $api = MovieAPI::getInstance();
-    $movie = $api->getMostPopularMovie2025();
+
+    if (isset($_GET['id'])) {
+        $movie = $api->getMovieDetails($_GET['id']);
+    } else {
+        $movie = $api->getMostPopularMovie2025();
+    }
 } catch (Exception $e) {
     error_log($e->getMessage());
+    $movie = null;
 }
+
 ?>
 
 <!doctype html>
@@ -21,8 +28,17 @@ try {
 <?php include_once __DIR__ . '/../../includes/nav.php'; ?>
 
 <main>
+    <?php if (isset($_GET['error'])): ?>
+        <div class="error">Aucun film trouvé</div>
+    <?php endif; ?>
+
     <?php if ($movie): ?>
-        <!-- Header avec backdrop et affiche -->
+    <?php else: ?>
+        <div class="error">Film non trouvé</div>
+    <?php endif; ?>
+
+    <?php if ($movie): ?>
+
         <header class="movie-hero">
             <div class="movie-backdrop" style="background-image: url('<?= TMDB_IMAGE_BASE_URL . str_replace('/w1500/', '/original/', $movie['backdrop_path']) ?>');"></div>
             <div class="hero-content">

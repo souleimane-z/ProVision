@@ -1,7 +1,7 @@
 /* *********************
  * Variables & Reset
  *********************** */
-@import url('/pages/moviesShows/movies.css');
+@import url('pages/moviesShows/movies.css');
 :root{
     --text: #FFF;
     --background: #1a1a1a;
@@ -555,3 +555,31 @@ header {
     }
 }
 
+.search-results .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.movie-card {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 8px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
+
+.error-message {
+    text-align: center;
+    padding: 4rem;
+    font-size: 1.5rem;
+}

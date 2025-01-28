@@ -9,7 +9,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 try {
     $api = ShowsAPI::getInstance();
 
-    // Configuration des catégories pour les séries TV
+
     $categories = [
         'Comédie' => 35,
         'Action & Aventure' => 10759,
@@ -25,13 +25,11 @@ try {
         'Politique' => 10768,
     ];
 
-    // Pour les nouveautés (5 séries fixes + 5 slides de 5 séries)
+
     $newShows = array_chunk($api->getSeriesByRelease(25), 5);
 
-    // Pour les tendances
     $trendingShows = array_chunk($api->getTrendingSeries(25), 5);
 
-    // Pour les genres
     $genreShows = [];
     foreach ($categories as $name => $genreId) {
         $genreShows[$name] = $api->getSeriesByGenreAndYear($genreId, 2024, 4);

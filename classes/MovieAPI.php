@@ -132,16 +132,17 @@ class MovieAPI {
     }
 
     public function getMovieDetails($movieId) {
-        $cacheKey = "movie_$movieId";
+        $cacheKey = "movie_full_$movieId";
         $cached = $this->cache->get($cacheKey);
 
-        if ($cached !== null) {
-            return $cached;
+        if (!$cached) {
+            $cached = $this->makeRequest("/movie/$movieId", [
+                'append_to_response' => 'credits'
+            ]);
+            $this->cache->set($cacheKey, $cached);
         }
 
-        $details = $this->makeRequest("/movie/$movieId");
-        $this->cache->set($cacheKey, $details);
-        return $details;
+        return $cached;
     }
 
     private function enrichMovieData($movie) {
@@ -166,7 +167,6 @@ class MovieAPI {
 
             $movie = $data['results'][0];
 
-            // Obtenir les détails complets du film, y compris le casting
             $details = $this->makeRequest("/movie/{$movie['id']}", [
                 'append_to_response' => 'credits'
             ]);
@@ -176,6 +176,19 @@ class MovieAPI {
         } catch (Exception $e) {
             error_log("Erreur dans getMostPopularMovie2024: " . $e->getMessage());
             return null;
+        }
+    }
+    public function searchMovies($query, $limit = 10) {
+        try {
+            $data = $this->makeRequest('/search/movie', [
+                'query' => $query, // Ne pas encoder ici, géré par http_build_query
+                'include_adult' => false
+            ]);
+
+            return array_slice($data['results'] ?? [], 0, $limit);
+        } catch (Exception $e) {
+            error_log("Search error: " . $e->getMessage());
+            return [];
         }
     }
 }
