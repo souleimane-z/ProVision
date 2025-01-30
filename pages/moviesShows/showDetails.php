@@ -53,22 +53,20 @@ try {
                     <h2>Saisons</h2>
                     <div class="seasons-grid">
                         <?php foreach ($show['seasons'] as $season): ?>
-                            <div class="season-card">
-                                <?php if ($season['poster_path']): ?>
-                                    <img src="<?= TMDB_IMAGE_BASE_URL . $season['poster_path'] ?>"
-                                         alt="Saison <?= $season['season_number'] ?>">
-                                <?php endif; ?>
-                                <div class="season-info">
-                                    <h3>Saison <?= $season['season_number'] ?></h3>
-                                    <p><?= $season['episode_count'] ?> épisodes</p>
-                                    <?php if ($season['air_date']): ?>
-                                        <p>Sortie le <?= date('d/m/Y', strtotime($season['air_date'])) ?></p>
+                            <?php if ($season['season_number'] > 0): ?>
+                                <div class="season-card">
+                                    <?php if ($season['poster_path']): ?>
+                                        <img src="<?= TMDB_IMAGE_BASE_URL . $season['poster_path'] ?>"
+                                             alt="Saison <?= $season['season_number'] ?>">
                                     <?php endif; ?>
+                                    <div class="season-info">
+                                        <h3>Saison <?= $season['season_number'] ?></h3>
+                                        <p><?= $season['episode_count'] ?> épisodes</p>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
-                </div>
 
                 <!-- Casting -->
                 <div class="cast">
@@ -92,40 +90,42 @@ try {
                 </div>
 
                 <!-- Images -->
-                <div class="episodes-section">
-                    <h2>Épisodes par saison</h2>
-                    <?php foreach ($show['seasons'] as $season): ?>
-                        <?php if ($season['season_number'] > 0): ?>
-                            <div class="season-episodes">
-                                <h3>Saison <?= $season['season_number'] ?></h3>
-                                <div class="episodes-grid">
-                                    <?php
-
-                                    $seasonDetails = $api->getSeasonDetails($show['id'], $season['season_number']);
-                                    foreach ($seasonDetails['episodes'] as $episode):
-                                        ?>
-                                        <div class="episode-card">
-                                            <?php if ($episode['still_path']): ?>
-                                                <img src="<?= TMDB_IMAGE_BASE_URL . $episode['still_path'] ?>"
-                                                     alt="<?= $episode['name'] ?>">
-                                            <?php endif; ?>
-                                            <div class="episode-info">
-                                                <h4>
-                                                    <span class="episode-number"><?= $episode['episode_number'] ?>.</span>
-                                                    <?= $episode['name'] ?>
-                                                </h4>
-                                                <p class="episode-overview"><?= $episode['overview'] ?></p>
-                                                <div class="episode-details">
-                                                    <span class="air-date"><?= date('d/m/Y', strtotime($episode['air_date'])) ?></span>
-                                                    <span class="duration"><?= $episode['runtime'] ?> min</span>
+                    <div class="episodes-accordion">
+                        <?php foreach ($show['seasons'] as $season): ?>
+                            <?php if ($season['season_number'] > 0): ?>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span>Saison <?= $season['season_number'] ?></span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <?php
+                                        $seasonDetails = $api->getSeasonDetails($show['id'], $season['season_number']);
+                                        foreach ($seasonDetails['episodes'] as $episode):
+                                            ?>
+                                            <div class="episode-card">
+                                                <?php if ($episode['still_path']): ?>
+                                                    <img src="<?= TMDB_IMAGE_BASE_URL . $episode['still_path'] ?>"
+                                                         alt="<?= $episode['name'] ?>">
+                                                <?php endif; ?>
+                                                <div class="episode-info">
+                                                    <h4>
+                                                        <span class="episode-number"><?= $episode['episode_number'] ?>.</span>
+                                                        <?= $episode['name'] ?>
+                                                    </h4>
+                                                    <p class="episode-overview"><?= $episode['overview'] ?></p>
+                                                    <div class="episode-details">
+                                                        <span class="air-date"><?= date('d/m/Y', strtotime($episode['air_date'])) ?></span>
+                                                        <span class="duration"><?= $episode['runtime'] ?> min</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    <?php endforeach; ?>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
 
             <!-- Colonne de droite -->
@@ -183,5 +183,44 @@ try {
 </main>
 
 <?php include_once __DIR__ . '/../../includes/footer.php'; ?>
+
+<!-- Icônes sur fontawesome.com -->
+<script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>
+
+<!-- Menu hamburger pour le responsive -->
+<script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+        document.querySelector('.header-list').classList.toggle('active');
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                const content = this.nextElementSibling;
+
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.accordion-content').style.display = 'none';
+                        otherItem.querySelector('.accordion-header').classList.remove('active');
+                    }
+                });
+
+                item.classList.toggle('active');
+                header.classList.toggle('active');
+
+                if (item.classList.contains('active')) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

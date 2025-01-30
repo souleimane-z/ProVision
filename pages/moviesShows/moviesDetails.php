@@ -144,5 +144,15 @@ try {
 </main>
 
 <?php include_once __DIR__ . '/../../includes/footer.php'; ?>
+
+<!-- Icônes sur fontawesome.com -->
+<script src="https://kit.fontawesome.com/386dcd1ba2.js" crossorigin="anonymous"></script>
+
+<!-- Menu hamburger pour le responsive -->
+<script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+        document.querySelector('.header-list').classList.toggle('active');
+    });
+</script>
 </body>
 </html>
