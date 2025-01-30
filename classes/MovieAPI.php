@@ -178,7 +178,7 @@ class MovieAPI {
             return null;
         }
     }
-    public function searchMovies($query, $limit = 10) {
+    public function searchMovies($query, $limit = 15) {
         try {
             $response = $this->makeRequest('/search/movie', [
                 'query' => $query,
@@ -194,7 +194,7 @@ class MovieAPI {
             return array_slice($response['results'], 0, $limit);
         } catch (Exception $e) {
             error_log("Search error: " . $e->getMessage());
-            throw $e; // Rethrow to see the error
+            throw $e;
         }
     }
 }

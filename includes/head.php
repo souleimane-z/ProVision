@@ -15,6 +15,8 @@ function generateHead($page, $additionalCSS = []) {
         <meta name="keywords" content="<?= $currentMeta['keywords'] ?>">
         <meta name="author" content="Souleimane, Hugo, Nassim">
 
+        <link rel="icon" type="image/png" href="https://res.cloudinary.com/dhqh98spd/image/upload/v1738233667/favicon_dnsrul.ico" />
+
         <title><?= $currentMeta['title'] ?> | ProVision</title>
 
 

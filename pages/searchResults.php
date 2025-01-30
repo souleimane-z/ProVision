@@ -28,6 +28,8 @@ try {
     <meta name="keywords" content="recherche, résultats, films, séries">
     <meta name="author" content="Souleimane, Hugo, Nassim">
 
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dhqh98spd/image/upload/v1738233667/favicon_dnsrul.ico" />
+
     <title>Résultats de recherche | ProVision</title>
 
     <link rel="stylesheet" href="../style.css" type="text/css">
@@ -51,7 +53,7 @@ try {
 <?php include_once __DIR__ . '/../includes/nav.php'; ?>
 
 <main class="search-results">
-    <h2>Résultats pour "<?= htmlspecialchars($query) ?>"</h2>
+    <h2>Résultats pour <span style="color: #e2d703; font-weight: bolder; text-transform: uppercase">"<?= htmlspecialchars($query) ?>"</span></h2>
 
     <?php if (!empty($movieResults) || !empty($showResults)): ?>
         <!-- Section Films -->
@@ -86,7 +88,7 @@ try {
             </div>
         <?php endif; ?>
     <?php else: ?>
-        <div class="error-message">Aucun résultat trouvé pour "<?= htmlspecialchars($query) ?>"</div>
+        <div class="error-message">Aucun résultat trouvé pour <span style="color: #cccccc; font-weight: bolder">"<?= htmlspecialchars($query) ?>"</span></div>
     <?php endif; ?>
 </main>
 

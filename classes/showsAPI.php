@@ -86,7 +86,7 @@ class ShowsAPI {
             return [];
         }
     }
-    public function searchShows($query, $limit = 10) {
+    public function searchShows($query, $limit = 15) {
         try {
             $data = $this->makeRequest('/search/tv', [
                 'query' => $query,
