@@ -1,0 +1,268 @@
+.movie-hero {
+    position: relative;
+    height: 60vh;
+    overflow: visible;
+    margin-bottom: 100px;
+}
+
+.movie-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+}
+
+.movie-backdrop::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+}
+
+.seasons-section {
+    margin: 3rem 0;
+}
+
+.seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.season-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(226, 215, 3, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+}
+
+.season-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.season-info {
+    padding: 1rem;
+}
+
+.season-info h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.season-info p {
+    color: var(--text);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.show-images {
+    margin: 3rem 0;
+}
+
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.images-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(226, 215, 3, 0.3);
+}
+
+.images-grid img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.movie-main {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+}
+
+.movie-content h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+    width: fit-content;
+}
+.episodes-section {
+    margin: 3rem 0;
+}
+
+.season-episodes {
+    margin-bottom: 3rem;
+}
+
+.season-episodes h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--secondary);
+}
+
+.episodes-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.episode-card {
+    display: flex;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(226, 215, 3, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.episode-card img {
+    width: 300px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.episode-info {
+    padding: 1rem;
+    flex: 1;
+}
+
+.episode-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.episode-number {
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.episode-overview {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.episode-details {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+    .episode-card {
+        flex-direction: column;
+    }
+
+    .episode-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .episodes-grid {
+        gap: 2rem;
+    }
+}
+@media (max-width: 1200px) {
+    .movie-main {
+        grid-template-columns: 1fr;
+    }
+
+    .seasons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .images-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .movie-poster {
+        transform: translateY(0);
+        width: 200px;
+        height: 300px;
+    }
+
+    .seasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .images-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .season-card img {
+        height: 250px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.season-card, .cast-member, .images-grid img {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+
+.season-card:hover {
+    box-shadow: 0 0 15px rgba(226, 215, 3, 0.3);
+}
+
+.cast-member img:hover {
+    border-color: var(--secondary);
+}
+
+.play-button:hover {
+    background-color: var(--secondary);
+}

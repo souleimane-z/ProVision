@@ -28,9 +28,11 @@ include_once __DIR__ . '/functions.php';;
         <?php endif; ?>
     </ul>
     <div class="header-search">
-        <form action="<?= BASE_URL ?>pages/searchResults.php" method="get">
+        <form action="<?php echo BASE_URL; ?>pages/searchResults.php" method="get">
             <input type="text" name="query" id="searchBar" placeholder="Rechercher..." required>
-            <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button type="submit" class="btn-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </form>
     </div>
 

@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/config.php';
 function generateHead($page, $additionalCSS = []) {
     $pageMetas = getPageMetas($page);
     $currentMeta = isset($pageMetas[$page]) ? $pageMetas[$page] : $pageMetas['default'];
@@ -34,15 +35,17 @@ function generateHead($page, $additionalCSS = []) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <script src="/../assets/js/main.js" defer></script>
+        <script src="<?php echo BASE_URL; ?>assets/js/main.js" defer></script>
     </head>
     <style>
         .swiper-pagination-bullet {
             background-color: #e2d703;
         }
+
         .swiper-pagination-bullet-active {
             background: #e2d703;
         }
+
         .swiper-button-prev {
             position: absolute;
             left: 30%;
@@ -54,6 +57,7 @@ function generateHead($page, $additionalCSS = []) {
             border-radius: 10px;
             width: 2rem;
         }
+
         .swiper-button-next {
             position: absolute;
             right: 30%;

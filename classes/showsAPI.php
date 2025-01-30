@@ -86,8 +86,55 @@ class ShowsAPI {
             return [];
         }
     }
+    public function searchShows($query, $limit = 10) {
+        try {
+            $data = $this->makeRequest('/search/tv', [
+                'query' => $query,
+                'include_adult' => false
+            ]);
 
-    // Récupérer les séries par genre
+            return array_slice($data['results'] ?? [], 0, $limit);
+        } catch (Exception $e) {
+            error_log("Search Shows error: " . $e->getMessage());
+            return [];
+        }
+    }
+    public function getShowDetails($showId) {
+        try {
+            $cacheKey = "show_full_$showId";
+            $cached = $this->cache->get($cacheKey);
+
+            if (!$cached) {
+                $cached = $this->makeRequest("/tv/$showId", [
+                    'append_to_response' => 'credits,images,seasons,episode_groups'
+                ]);
+
+                if (!$cached) {
+                    throw new Exception('Show not found');
+                }
+
+                $cached = $this->enrichSeriesData($cached);
+
+                $this->cache->set($cacheKey, $cached);
+            }
+
+            return $cached;
+        } catch (Exception $e) {
+            error_log("Error in getShowDetails: " . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    private function enrichSeriesData($series) {
+        if (!isset($series['episode_run_time']) || empty($series['episode_run_time'])) {
+            if (!isset($series['id'])) {
+                return $series;
+            }
+            $details = $this->getSeriesDetails($series['id']);
+            $series['episode_run_time'] = $details['episode_run_time'] ?? [];
+        }
+        return $series;
+    }
     public function getSeriesByGenre($genreId, $limit = 4) {
         $data = $this->makeRequest('/discover/tv', [
             'with_genres' => $genreId,
@@ -107,7 +154,6 @@ class ShowsAPI {
                 'page' => 1
             ]);
 
-            // Récupérer 8 résultats pour en filtrer 4 valides
             $series = array_slice($data['results'], 0, 8);
 
             // Filtrer les séries sans poster_path
@@ -136,17 +182,17 @@ class ShowsAPI {
             return [];
         }
     }
+    public function getSeasonDetails($showId, $seasonNumber) {
+        $cacheKey = "season_{$showId}_{$seasonNumber}";
+        $cached = $this->cache->get($cacheKey);
 
-    // Enrichir les données des séries
-    private function enrichSeriesData($series) {
-        if (!isset($series['episode_run_time']) || empty($series['episode_run_time'])) {
-            $details = $this->getSeriesDetails($series['id']);
-            $series['episode_run_time'] = $details['episode_run_time'] ?? [];
+        if (!$cached) {
+            $cached = $this->makeRequest("/tv/$showId/season/$seasonNumber");
+            $this->cache->set($cacheKey, $cached);
         }
-        return $series;
-    }
 
-    // Récupérer les détails d'une série
+        return $cached;
+    }
     public function getSeriesDetails($seriesId) {
         $cacheKey = "series_$seriesId";
         $cached = $this->cache->get($cacheKey);

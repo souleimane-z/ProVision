@@ -180,15 +180,21 @@ class MovieAPI {
     }
     public function searchMovies($query, $limit = 10) {
         try {
-            $data = $this->makeRequest('/search/movie', [
-                'query' => $query, // Ne pas encoder ici, géré par http_build_query
+            $response = $this->makeRequest('/search/movie', [
+                'query' => $query,
                 'include_adult' => false
             ]);
 
-            return array_slice($data['results'] ?? [], 0, $limit);
+            error_log("API Response: " . print_r($response, true)); // Debug
+
+            if (!isset($response['results'])) {
+                throw new Exception('No results key in API response');
+            }
+
+            return array_slice($response['results'], 0, $limit);
         } catch (Exception $e) {
             error_log("Search error: " . $e->getMessage());
-            return [];
+            throw $e; // Rethrow to see the error
         }
     }
 }
