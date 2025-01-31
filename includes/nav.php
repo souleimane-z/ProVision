@@ -1,7 +1,7 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);
 include_once __DIR__ . '/config.php';
-include_once __DIR__ . '/functions.php';;
+include_once __DIR__ . '/functions.php';
 ?>
 <nav class="header-navbar" id="homepage">
         <!-- Voir config.php -->

@@ -1,9 +1,15 @@
 <?php
 include_once __DIR__ . '/../includes/config.php';
 include_once __DIR__ . '/../includes/functions.php';
+include_once '../includes/meta_config.php';
+include_once '../includes/head.php';
+
+
 // valeurs par défault
 $default_username = 'admin';
 $default_password = 'Password123';
+
+$current_page = basename($_SERVER['PHP_SELF']);
 
 $errors = [];
 
@@ -20,16 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Se connecter | ProVision</title>
-    <link rel="stylesheet" href="./forms.css">
 
-</head>
-<body>
+<!doctype html>
+<html lang="fr">
+<?php generateHead($current_page); ?>
+
 <?php include_once __DIR__ . '/../includes/nav.php'; ?>
 
 <main class="login-page">

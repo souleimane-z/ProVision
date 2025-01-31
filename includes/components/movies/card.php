@@ -1,8 +1,9 @@
 <?php
 function renderMovieCard($movie) {
     if (!$movie) return;
+    $movieUrl = BASE_URL . "pages/moviesShows/moviesDetails.php?id=" . $movie['id'];
     ?>
-    <div class="moviesCard">
+    <a href="<?= $movieUrl ?>" class="moviesCard">
         <div class="movies-img">
             <img src="<?= TMDB_IMAGE_BASE_URL . $movie['poster_path'] ?>"
                  alt="<?= $movie['title'] ?>"
@@ -13,6 +14,6 @@ function renderMovieCard($movie) {
             <span><i class="fa-solid fa-star"></i><?= number_format($movie['vote_average'], 1) ?></span>
             <span><i class="fa-solid fa-clock"></i><?= floor($movie['runtime']/60).'h'.($movie['runtime']%60) ?></span>
         </div>
-    </div>
+    </a>
     <?php
 }

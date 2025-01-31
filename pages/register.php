@@ -2,6 +2,9 @@
 
 include_once __DIR__ . '/../includes/config.php';
 include_once __DIR__ . '/../includes/functions.php';
+include_once __DIR__ . '/../includes/meta_config.php';
+include_once __DIR__ . '/../includes/head.php';
+
 
 
 $errors = [];
@@ -31,18 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+$current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S'inscrire | ProVision</title>
-    <link rel="stylesheet" href="./forms.css">
 
-</head>
-<body>
+<!doctype html>
+<html lang="fr">
+<?php generateHead($current_page); ?>
+
 <?php include_once __DIR__ . '/../includes/nav.php'; ?>
 
 <main class="register-page">

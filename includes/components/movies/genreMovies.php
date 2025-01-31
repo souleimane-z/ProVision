@@ -13,20 +13,28 @@
                                 <div class="card">
                                     <div class="card-img">
                                         <div class="card-img_row">
-                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
-                                                 alt="<?= $movies[0]['title'] ?>"
-                                                 title="<?= $movies[0]['title'] ?>">
-                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[1]['poster_path'] ?>"
-                                                 alt="<?= $movies[1]['title'] ?>"
-                                                 title="<?= $movies[1]['title'] ?>">
+                                            <a href="<?= BASE_URL ?>pages/moviesShows/moviesDetails.php?id=<?= $movies[0]['id'] ?>">
+                                                <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
+                                                     alt="<?= $movies[0]['title'] ?>"
+                                                     title="<?= $movies[0]['title'] ?>">
+                                            </a>
+                                            <a href="<?= BASE_URL ?>pages/moviesShows/moviesDetails.php?id=<?= $movies[1]['id'] ?>">
+                                                <img src="<?= TMDB_IMAGE_BASE_URL . $movies[1]['poster_path'] ?>"
+                                                     alt="<?= $movies[1]['title'] ?>"
+                                                     title="<?= $movies[1]['title'] ?>">
+                                            </a>
                                         </div>
                                         <div class="card-img_row second-row">
-                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
-                                                 alt="<?= $movies[2]['title'] ?>"
-                                                 title="<?= $movies[2]['title'] ?>">
-                                            <img src="<?= TMDB_IMAGE_BASE_URL . $movies[3]['poster_path'] ?>"
-                                                 alt="<?= $movies[3]['title'] ?>"
-                                                 title="<?= $movies[3]['title'] ?>">
+                                            <a href="<?= BASE_URL ?>pages/moviesShows/moviesDetails.php?id=<?= $movies[2]['id'] ?>">
+                                                <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
+                                                     alt="<?= $movies[2]['title'] ?>"
+                                                     title="<?= $movies[2]['title'] ?>">
+                                            </a>
+                                            <a href="<?= BASE_URL ?>pages/moviesShows/moviesDetails.php?id=<?= $movies[3]['id'] ?>">
+                                                <img src="<?= TMDB_IMAGE_BASE_URL . $movies[3]['poster_path'] ?>"
+                                                     alt="<?= $movies[3]['title'] ?>"
+                                                     title="<?= $movies[3]['title'] ?>">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="card-explore">
