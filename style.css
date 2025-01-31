@@ -273,6 +273,7 @@ header {
 .home-cards_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    height: 100%;
     gap: clamp(1rem, 3vw, 2rem);
     padding: 1rem;
 }
@@ -283,21 +284,28 @@ header {
     border-radius: 10px;
     padding: 1rem;
     transition: all 0.3s ease;
+    z-index: 2000;
 }
 
 .card:hover {
     background: rgba(0,0,0,0.3);
 }
-
-.card-img_row {
+.cards-img {
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.cards-img_row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
-.card-img_row img {
-    object-fit: contain;
+.cards-img_row img {
+    object-fit: cover;
     width: 100%;
     height: auto;
     border-radius: 8px;

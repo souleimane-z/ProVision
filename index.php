@@ -101,8 +101,8 @@ include_once __DIR__ . '/includes/nav.php';
                                 <div class="genre-grid">
                                     <?php foreach ($genreGroup as $category => $movies): ?>
                                         <div class="card">
-                                            <div class="card-img">
-                                                <div class="card-img_row">
+                                            <div class="cards-img">
+                                                <div class="cards-img_row">
                                                     <img src="<?= TMDB_IMAGE_BASE_URL . $movies[0]['poster_path'] ?>"
                                                          alt="<?= $movies[0]['title'] ?>"
                                                          title="<?= $movies[0]['title'] ?>">
@@ -110,7 +110,7 @@ include_once __DIR__ . '/includes/nav.php';
                                                          alt="<?= $movies[1]['title'] ?>"
                                                          title="<?= $movies[1]['title'] ?>">
                                                 </div>
-                                                <div class="card-img_row second-row">
+                                                <div class="cards-img_row second-row">
                                                     <img src="<?= TMDB_IMAGE_BASE_URL . $movies[2]['poster_path'] ?>"
                                                          alt="<?= $movies[2]['title'] ?>"
                                                          title="<?= $movies[2]['title'] ?>">
@@ -148,8 +148,8 @@ include_once __DIR__ . '/includes/nav.php';
                                         <div class="genre-grid">
                                             <?php foreach ($genreGroup as $category => $series): ?>
                                                 <div class="card">
-                                                    <div class="card-img">
-                                                        <div class="card-img_row">
+                                                    <div class="cards-img">
+                                                        <div class="cards-img_row">
                                                             <?php if (!empty($series[0]) && isset($series[0]['poster_path'])): ?>
                                                                 <img src="<?= TMDB_IMAGE_BASE_URL . $series[0]['poster_path'] ?>"
                                                                      alt="<?= $series[0]['name'] ?>">
@@ -164,7 +164,7 @@ include_once __DIR__ . '/includes/nav.php';
                                                                 <div class="placeholder-poster"></div>
                                                             <?php endif; ?>
                                                         </div>
-                                                        <div class="card-img_row second-row">
+                                                        <div class="cards-img_row second-row">
                                                             <?php if (!empty($series[2]) && isset($series[2]['poster_path'])): ?>
                                                                 <img src="<?= TMDB_IMAGE_BASE_URL . $series[2]['poster_path'] ?>"
                                                                      alt="<?= $series[2]['name'] ?>">
