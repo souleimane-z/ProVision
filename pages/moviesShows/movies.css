@@ -39,6 +39,7 @@
     margin: 2rem 0;
     background: transparent;
     z-index: 9999;
+    overflow: visible;
 }
 
 .carousel-grid {
@@ -46,6 +47,7 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 0.5rem;
     height: 100%;
+    overflow: visible;
 }
 
 .swiper .moviesCard {
@@ -134,14 +136,14 @@
     padding: 1rem;
     height: 80%;
     transition: all 0.3s ease;
-    text-decoration: none; /* Ajouté */
-    color: inherit; /* Ajouté */
-    display: block; /* Ajouté */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .card:hover {
     background: rgba(0,0,0,0.3);
-    transform: translateY(-5px); /* Ajouté */
+    transform: translateY(-5px);
 }
 
 .card-img {
@@ -211,7 +213,7 @@
 
 @media (max-width: 1200px) {
     .carousel-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .genre-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -223,10 +225,10 @@
         padding: 0 2rem;
     }
     .carousel-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .genre-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     .moviesCardDetails {
         font-size: 0.7rem;
@@ -239,9 +241,32 @@
     }
     .carousel-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr)!important;
     }
     .moviesCardDetails {
         flex-direction: column;
         align-items: flex-start;
+    }
+    .card-img_row a {
+        width: 45%;
+    }
+    .card {
+        height: 80%;
+        padding: 0.5rem;
+        overflow: hidden;
+    }
+    .card-img {
+        height: 80%;
+    }
+    .card-img_row {
+        gap: 0.25rem;
+    }
+    .card-img_row a {
+        width: 45%;
+        height: auto;
+        padding: 0.5rem;
     }
 }

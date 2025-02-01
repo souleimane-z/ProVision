@@ -4,26 +4,24 @@ include_once __DIR__ . '/../includes/functions.php';
 include_once '../includes/meta_config.php';
 include_once '../includes/head.php';
 
-
-// valeurs par défault
-$default_username = 'admin';
-$default_password = 'Password123';
-
 $current_page = basename($_SERVER['PHP_SELF']);
-
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
 
-    if ($username === $default_username && $password === $default_password) {
+    if (verify_login($username, $password)) {
         header("Location: ../index.php");
         exit;
     } else {
         $errors[] = "Mot de passe ou nom d'utilisateur invalide.";
     }
 }
+// valeurs par défault pour le développement
+// $default_username = 'admin';
+// $default_password = 'Password123';
+
 ?>
 
 

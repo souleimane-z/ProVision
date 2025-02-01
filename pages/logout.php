@@ -1,10 +1,9 @@
 <?php
+require_once __DIR__ . '/../includes/config.php';
+session_start();
 
-setcookie('logged_in', '', time() - 3600, '/');
-setcookie('current_user', '', time() - 3600, '/');
-setcookie('user_data', '', time() - 3600, '/');
+$_SESSION = array();
+session_destroy();
 
-
-header("Location: /../index.php");
+header("Location: " . BASE_URL . "index.php");
 exit;
-?>

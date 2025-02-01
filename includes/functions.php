@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once __DIR__ . '/../config/database.php';
 /* Affichage dynamique de l'option de se connecter / s'inscrire ou bien se déconnecter */
 
 function displayAuthButtons($isLoggedIn, $logout_icon) {
@@ -32,45 +33,59 @@ function displayAuthButtons($isLoggedIn, $logout_icon) {
 // Reste des fonctions inchangé...
 function register_user($username, $email, $password) {
     try {
-        $user = [
+        $db = getDBConnection();
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        $query = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+        $stmt = $db->prepare($query);
+
+        return $stmt->execute([
             'username' => $username,
             'email' => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT)
-        ];
-        setcookie(
-            'user_data',
-            json_encode($user),
-            time() + (86400 * 30),
-            '/'
-        );
-
-        return true;
-    } catch (Exception $e) {
+            'password' => $hashed_password
+        ]);
+    } catch(PDOException $e) {
+        error_log("Erreur d'inscription : " . $e->getMessage());
         return false;
     }
 }
 
 function verify_login($username, $password) {
-    if (!isset($_COOKIE['user_data'])) {
+    try {
+        $db = getDBConnection();
+
+        $query = "SELECT * FROM users WHERE username = :username LIMIT 1";
+        $stmt = $db->prepare($query);
+        $stmt->execute(['username' => $username]);
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Debug
+        error_log("Login attempt - Username: " . $username);
+        error_log("User found in DB: " . ($user ? 'yes' : 'no'));
+        if ($user) {
+            error_log("Password verification: " . (password_verify($password, $user['password']) ? 'success' : 'failed'));
+        }
+
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            return true;
+        }
+
+        return false;
+    } catch(PDOException $e) {
+        error_log("Erreur de connexion : " . $e->getMessage());
         return false;
     }
-
-    $user = json_decode($_COOKIE['user_data'], true);
-
-    if ($user['username'] === $username &&
-        password_verify($password, $user['password'])) {
-        return true;
-    }
-
-    return false;
 }
 
 function is_logged_in() {
-    return isset($_COOKIE['logged_in']) && $_COOKIE['logged_in'] === 'true';
+    return isset($_SESSION['user_id']);
 }
 
 function get_logged_user() {
-    return isset($_COOKIE['current_user']) ? $_COOKIE['current_user'] : null;
+    return $_SESSION['username'] ?? null;
 }
 
 ?>

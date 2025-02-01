@@ -71,6 +71,29 @@ function generateHead($page, $additionalCSS = []) {
             border-radius: 10px;
             width: 2rem;
         }
+
+        @media (max-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                width: 1.5rem;
+                height: 1.5rem;
+                padding: 0.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .swiper-button-prev {
+                left: 0.5rem;
+            }
+
+            .swiper-button-next {
+                right: 0.5rem;
+            }
+
+            .swiper-button-next::after,
+            .swiper-button-prev::after {
+                font-size: 1rem;
+            }
+        }
     </style>
     <?php
 }

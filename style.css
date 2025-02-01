@@ -187,26 +187,6 @@ header {
     margin: 0;
 }
 
-.slider .slide:nth-child(1) {
-    background-image: url('assets/img/Slider/Top Gun Collection  - Backdrop.webp');
-    animation-delay: 0s;
-}
-
-.slider .slide:nth-child(2) {
-    background-image: url('assets/img/Slider/Top Gun Collection  - Backdrop.webp');
-    animation-delay: -3.8s;
-}
-
-.slider .slide:nth-child(3) {
-    background-image: url('assets/img/Slider/Ted Lasso (2020) - Backdrop.webp');
-    animation-delay: -7.6s;
-}
-
-.slider .slide:nth-child(4) {
-    background-image: url('assets/img/Slider/Cross (2024) - Backdrop.webp');
-    animation-delay: -11.399999999999999s;
-}
-
 
 @keyframes slider {
     0%, 20%, 100% {
@@ -266,142 +246,127 @@ header {
     font-size: 0.8rem;
 }
 
-/* *********************
- * Section : Categories
- *********************** */
 
-.home-cards_container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    height: 100%;
-    gap: clamp(1rem, 3vw, 2rem);
-    padding: 1rem;
-}
-
-.card {
-    background: rgba(0,0,0,0.1);
-    border: 1px solid rgba(226, 215, 3, 0.3);
-    border-radius: 10px;
-    padding: 1rem;
-    transition: all 0.3s ease;
-    z-index: 2000;
-}
-
-.card:hover {
-    background: rgba(0,0,0,0.3);
-}
-.cards-img {
-    width: 100%;
-    height: 90%;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-.cards-img_row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.cards-img_row img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.card-explore {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card-explore h6 {
-    margin: 0;
-    font-size: 1rem;
-    text-transform: uppercase;
-}
-
-.card-explore button {
-    background: transparent;
-    border: none;
-    color: var(--primary);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.card-explore button:hover {
-    color: var(--secondary);
-}
 
 /* *********************
  * Section : Subscribe Home
  *********************** */
-
-
 .subscribeHome-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     padding: 2rem;
-    justify-content: center;
 }
 .subscribeHome-card {
-    width: 400px;
-    height: auto;
+    border: 1px solid var(--secondary);
     border-radius: 10px;
-    border: 1px solid rgba(211, 93, 9, 0.3);
-    box-shadow: 3px 0 6px rgba(255,255,255,0.1);
-    padding: 0.8rem;
-    background: rgba(0,0,0, 0.06);
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
-.subscribeHome-txt{
+.subscribeHome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.subscribeHome-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.subscribeHome-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.subscribeHome-features {
+    margin-bottom: 1.5rem;
+}
+.subscribeHome-features ul {
+    list-style: none;
+    padding: 0;
+}
+.subscribeHome-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--secondary);
+
+}
+.subscribeHome-pricing {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
-.subscribeHome-title,
-.subscribeHome-description,
 .subscribeHome-price {
-    margin: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
-
-.subscribeHome-title {
-    font-size: 1.2rem!important;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.subscribeHome-description {
+.subscribeHome-price-yearly {
+    font-size: 1rem;
     color: var(--secondary);
 }
 .subscribeHome-btn {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+
 }
-.subscribeHome-btn button {
+
+.tryYourself {
     color: var(--text);
-    margin: 1rem 0 0 0;
-    padding: 7px;
+    padding: 0.8rem 2rem;
     border: 2px solid var(--secondary);
     border-radius: 5px;
     font-weight: 800;
     background: var(--background);
-    background-color: var(--background);
     background-image: linear-gradient(75deg, var(--secondary) 50%, transparent 50%);
     background-position: 100%;
     background-size: 600%;
     transition: background 430ms ease-in-out;
-}
-.subscribeHome-btn button:hover {
     cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.tryYourself:hover {
     background-position: 0;
 }
-.subscribeHome-btn button a {
-    text-decoration: none;
-    color: var(--text);
 
+@media (max-width: 768px) {
+    .subscribeHome-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .subscribeHome-card {
+        padding: 1.5rem;
+    }
+
+    .subscribeHome-title {
+        font-size: 1.5rem;
+    }
+
+    .subscribeHome-features li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .subscribeHome-features {
+        margin-bottom: 1rem;
+    }
+
+    .subscribeHome-pricing {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .subscribeHome-price {
+        font-size: 1.2rem;
+    }
+
+    .subscribeHome-price-yearly {
+        font-size: 0.9rem;
+    }
 }
 /* *********************
  * Section : Footer
