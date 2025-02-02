@@ -247,7 +247,6 @@ header {
 }
 
 
-
 /* *********************
  * Section : Subscribe Home
  *********************** */
@@ -256,59 +255,79 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
+
 .subscribeHome-card {
     border: 1px solid var(--secondary);
     border-radius: 10px;
     padding: 2rem;
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
+
 .subscribeHome-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary);
 }
-.subscribeHome-header {
-    text-align: center;
-    margin-bottom: 1rem;
-}
+
 .subscribeHome-title {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary);
-}
-.subscribeHome-features {
+    text-align: center;
     margin-bottom: 1.5rem;
 }
+
+.subscribeHome-features {
+    margin: 1.5rem 0;
+}
+
 .subscribeHome-features ul {
     list-style: none;
     padding: 0;
 }
+
 .subscribeHome-features li {
-    padding: 0.5rem 0;
+    padding: 0.8rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--secondary);
-
-}
-.subscribeHome-pricing {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.8rem;
 }
+
+.subscribeHome-features li i {
+    color: var(--primary);
+}
+
+.subscribeHome-pricing {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(211, 93, 9, 0.1);
+    border-radius: 8px;
+}
+
 .subscribeHome-price {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: 600;
+    color: var(--text);
+    display: block;
+    margin-bottom: 0.5rem;
 }
+
 .subscribeHome-price-yearly {
-    font-size: 1rem;
     color: var(--secondary);
+    font-size: 1.1rem;
 }
+
 .subscribeHome-btn {
     text-align: center;
-
+    margin-top: 1.5rem;
 }
 
 .tryYourself {
@@ -351,17 +370,8 @@ header {
 }
 
 @media (max-width: 480px) {
-    .subscribeHome-features {
-        margin-bottom: 1rem;
-    }
-
-    .subscribeHome-pricing {
-        flex-direction: column;
-        gap: 0.2rem;
-    }
-
     .subscribeHome-price {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     .subscribeHome-price-yearly {

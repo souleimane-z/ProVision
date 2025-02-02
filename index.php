@@ -236,6 +236,7 @@ include_once __DIR__ . '/includes/nav.php';
     $subscriptionPlans = [
         'standard' => [
             'title' => 'Standard',
+            'description' => "Accès à une plus large sélection de films et d'émissions, y compris la plupart des nouveautés et du contenu exclusif",
             'features' => [
                 'Full HD',
                 '1 Écran',
@@ -249,6 +250,7 @@ include_once __DIR__ . '/includes/nav.php';
         ],
         'premium' => [
             'title' => 'Premium',
+            'description' => "Accès à la plus large sélection de films et d'émissions, y compris toutes les nouveautés et le visionnage hors ligne",
             'features' => [
                 '4K HDR',
                 '4 Écrans',
@@ -263,36 +265,39 @@ include_once __DIR__ . '/includes/nav.php';
     ];
     ?>
 
-        <section class="subscribeHome sectionsMain">
-            <div class="subscribeHome-text sectionsMain_txt">
-                <h3>Choisissez le forfait qui vous convient</h3>
-                <span>Des forfaits adaptés à tous les besoins</span>
-            </div>
+    <section class="subscribeHome sectionsMain">
+        <div class="subscribeHome-text sectionsMain_txt">
+            <h3>Choisissez le forfait qui vous convient</h3>
+            <span>Des forfaits adaptés à tous les besoins. Rejoignez ProVision pour un divertissement illimité.</span>
+        </div>
 
-            <div class="subscribeHome-container">
-                <?php foreach($subscriptionPlans as $planId => $plan):?>
-                    <div class="subscribeHome-card">
-                        <div class="subscribeHome-header">
-                            <span class="subscribeHome-title"><?= $plan['title']?></span>
-                        </div>
-                        <div class="subscribeHome-features">
-                            <ul>
-                                <?php foreach($plan['features'] as $feature):?>
-                                    <li><?= $feature?></li>
-                                <?php endforeach;?>
-                            </ul>
-                        </div>
-                        <div class="subscribeHome-pricing">
-                            <span class="subscribeHome-price"><?= number_format($plan['price']['monthly'], 2)?> €/mois</span>
-                            <span class="subscribeHome-price-yearly">ou <?= $plan['price']['yearly']?> €/an</span>
-                        </div>
-                        <div class="subscribeHome-btn">
-                            <button class="tryYourself" id="<?= $planId?>">Essai Gratuit</button>
-                        </div>
+        <div class="subscribeHome-container">
+            <?php foreach($subscriptionPlans as $planId => $plan): ?>
+                <div class="subscribeHome-card">
+                    <div class="subscribeHome-header">
+                        <span class="subscribeHome-title"><?= $plan['title']?></span>
                     </div>
-                <?php endforeach;?>
-            </div>
-        </section>
+                    <div class="subscribeHome-description">
+                        <p><?= $plan['description']?></p>
+                    </div>
+                    <div class="subscribeHome-features">
+                        <ul>
+                            <?php foreach($plan['features'] as $feature): ?>
+                                <li><i class="fas fa-check"></i> <?= $feature?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <div class="subscribeHome-pricing">
+                        <span class="subscribeHome-price"><?= number_format($plan['price']['monthly'], 2)?> €/mois</span>
+                        <span class="subscribeHome-price-yearly">ou <?= $plan['price']['yearly']?> €/an</span>
+                    </div>
+                    <div class="subscribeHome-btn">
+                        <button class="tryYourself" id="<?= $planId?>">Essai Gratuit</button>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
 </main>
 
     <!-- Include : Footer -->
