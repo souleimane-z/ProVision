@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initSwipers();
+    initVideoPlayer();
 });
 
 function initNavigation() {
@@ -70,10 +71,3 @@ function initVideoPlayer() {
         });
     }
 }
-
-// Ajouter à la fonction existante initNavigation
-document.addEventListener('DOMContentLoaded', () => {
-    initNavigation();
-    initSwipers();
-    initVideoPlayer();
-});
