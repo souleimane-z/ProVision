@@ -1,8 +1,10 @@
 .movie-hero {
     position: relative;
-    height: 60vh;
-    overflow: visible;
+    height: 80vh;
+    min-height: 600px;
+    overflow: hidden;
     margin-bottom: 100px;
+    width: 100%;
 }
 
 .movie-backdrop {
