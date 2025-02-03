@@ -65,11 +65,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <form action="register.php" method="POST" class="register-form">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
