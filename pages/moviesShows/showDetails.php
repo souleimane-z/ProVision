@@ -180,6 +180,17 @@ try {
     <?php else: ?>
         <div class="error">Série non trouvée</div>
     <?php endif; ?>
+            <div class="video-modal">
+                <div class="video-container">
+                    <button class="close-video">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <video class="video-player" controls>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la lecture vidéo.
+                    </video>
+                </div>
+            </div>
 </main>
 
 <?php include_once __DIR__ . '/../../includes/footer.php'; ?>
