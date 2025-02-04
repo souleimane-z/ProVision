@@ -15,7 +15,7 @@
             <div class="footer-col">
                 <h4>À Propos</h4>
                 <ul>
-                    <li><a href="#">Nous contacter</a></li>
+                    <li><a href="<?= BASE_URL ?>pages/contact.php">Nous contacter</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">Appareils</a></li>
                 </ul>
