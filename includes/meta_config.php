@@ -106,6 +106,19 @@ function getPageMetas($current_page) {
                 BASE_URL . 'assets/js/main.js'
             ]
         ],
+        'contact.php' => [
+            'title' => 'Nous contacter',
+            'description' => 'Contactez l\'équipe ProVision',
+            'keywords' => 'contact, support, aide, message',
+            'css' => [
+                BASE_URL . 'style.css',
+                BASE_URL . 'pages/contact.css'
+            ],
+            'js' => [
+                'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+                BASE_URL . 'assets/js/main.js'
+            ]
+        ],
         'default' => [
             'title' => 'ProVision',
             'description' => 'ProVision - Votre plateforme de streaming',

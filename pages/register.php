@@ -82,7 +82,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required>
             </div>
             <div class="form-actions">
-                <button type="submit" class="btn-subscribe">Nous rejoindre</button>
+                <button type="submit" class="btn-subscribe">Inscription</button>
             </div>
         </form>
     </section>

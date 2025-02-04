@@ -1,0 +1,118 @@
+@import url('../style.css');
+
+.contact-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(226, 215, 3, 0.3);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+.contact-container h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary);
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-container label {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.contact-container input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text);
+    font-family: inherit;
+}
+
+.contact-container input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.contact-container textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-container input[type="submit"], input[type="button"] {
+    background: var(--background);
+    border: 2px solid var(--primary);
+    padding: 0.8rem 2rem;
+    color: var(--text);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+}
+
+.contact-container input[type="submit"]:hover {
+    background: var(--primary);
+    color: var(--background);
+}
+
+.contact-container input[type="button"] {
+    border-color: var(--secondary);
+}
+
+.contact-container input[type="button"]:hover {
+    background: var(--secondary);
+    color: var(--background);
+}
+
+.contact-container .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.success-message {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: #4CAF50;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #f44336;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contact-container  {
+        margin: 2rem;
+        padding: 1.5rem;
+    }
+
+    .contact-container input[type="submit"], .contact-container input[type="button"] {
+        width: 100%;
+    }
+}

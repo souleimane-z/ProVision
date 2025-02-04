@@ -96,6 +96,20 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+
+2. **Créer la table `contact_messages`**
+
+```sql
+CREATE TABLE contact_messages (
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   name VARCHAR(100) NOT NULL,
+   email VARCHAR(255) NOT NULL,
+   subject VARCHAR(200) NOT NULL,
+   message TEXT NOT NULL,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+status ENUM('new', 'read', 'replied') DEFAULT 'new'
+);
+```
 3. **Configurer `config.php`**
    Dans `includes/config.php`, renseignez vos identifiants MySQL :
 ```php
