@@ -50,12 +50,12 @@ function generateHead($page, $additionalCSS = []) {
 
         .swiper-button-prev {
             position: absolute;
-            left: 30%;
-            top: 98%;
+            left: 42%;
+            top: 100%;
             transform: translateY(-50%);
             color: #fff;
             background: #e2d703;
-            padding: 0.5rem;
+            padding: 0.8rem;
             border-radius: 10px;
             width: 0.5rem;
             height: 1rem;
@@ -63,20 +63,27 @@ function generateHead($page, $additionalCSS = []) {
 
         .swiper-button-next {
             position: absolute;
-            right: 30%;
-            top: 98%;
+            right: 42%;
+            top: 100%;
             transform: translateY(-50%);
             color: #fff;
             background: #e2d703;
-            padding: 0.5rem;
+            padding: 0.8rem;
             border-radius: 10px;
             width: 0.5rem;
             height: 1rem;
         }
+
         .swiper-button-next::after,
         .swiper-button-prev::after {
-            font-size: 1.2rem;
+            font-size: 2rem;
             font-weight: 900;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: #d35d09;
+            transform: translateY(-50%) scale(1.1);
         }
 
         @media (max-width: 768px) {
