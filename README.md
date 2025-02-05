@@ -113,10 +113,10 @@ status ENUM('new', 'read', 'replied') DEFAULT 'new'
 3. **Configurer `config.php`**
    Dans `includes/config.php`, renseignez vos identifiants MySQL :
 ```php
-$host = 'localhost';
-$dbname = 'provision';
-$username = 'root';
-$password = '';
+$host = ''; // URL de votre hébergement MySQL (défault : 'localhost')
+$dbname = 'provision'; // nom de la BDD
+$username = ''; // Votre nom d'utlisateur de base donnée (défault : "root")
+$password = ''; // Votre mot de passe (défault : '' vide)
 ```
 
 ### 4️⃣ Lancer le projet
