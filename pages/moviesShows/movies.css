@@ -148,10 +148,13 @@
 
 .card-img {
     width: 100%;
-    height: 90%;
+    height: 80%;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+}
+.card-img_row img{
+    height: 100%;
 }
 .card-img_row {
     display: flex;
@@ -160,7 +163,7 @@
 .card-img_row a {
     display: block;
     width: 43%;
-    height: 70%;
+    height: 90%;
     transition: transform 0.3s ease;
 }
 
@@ -182,7 +185,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.5rem;
+    padding: 0;
+    margin: 0;
 
 }
 
@@ -190,7 +194,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 80%;
+    max-width: 100%;
+    font-size: 1.2rem;
 }
 
 .card-explore button {
@@ -217,6 +222,11 @@
     }
     .genre-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .card {
+        height: 80%;
+        padding: 0.5rem;
+        overflow: hidden;
     }
 }
 

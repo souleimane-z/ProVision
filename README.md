@@ -16,56 +16,10 @@ ProVision est une plateforme de vidéo à la demande (VOD) permettant aux utilis
 ---
 
 ## 📁 Architecture du projet
-```
-C:.
-│   index.php
-│   style.css
-│
-├── assets/
-│   ├── img/
-│   ├── js/
-│       ├── main.js
-│
-├── cache/
-│
-├── classes/
-│   ├── Cache.php
-│   ├── MovieAPI.php
-│   ├── showsAPI.php
-│
-├── config/
-│   ├── api_config.php
-│   ├── tmdb.php
-│
-├── data/
-│   ├── movies.php
-│
-├── includes/
-│   ├── config.php
-│   ├── footer.php
-│   ├── functions.php
-│   ├── head.php
-│   ├── meta_config.php
-│   ├── nav.php
-│   ├── search.php
-│   ├── tmdb_helper.php
-│   ├── components/
-│       ├── movies/
-│       ├── shows/
-│
-├── pages/
-│   ├── forms.css
-│   ├── login.php
-│   ├── logout.php
-│   ├── register.php
-│   ├── searchResults.css
-│   ├── subscription.php
-│   ├── moviesShows/
-│       ├── movies.php
-│       ├── moviesDetails.php
-│       ├── showDetails.php
-│       ├── shows.php
-```
+Vous pouvez retrouver une démo live du site hébergé par InfinityFree.
+
+[ProVision](http://provision.kesug.com/)
+
 
 ---
 
