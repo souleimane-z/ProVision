@@ -55,9 +55,10 @@ function generateHead($page, $additionalCSS = []) {
             transform: translateY(-50%);
             color: #fff;
             background: #e2d703;
-            padding: 5px 10px;
+            padding: 0.5rem;
             border-radius: 10px;
-            width: 2rem;
+            width: 0.5rem;
+            height: 1rem;
         }
 
         .swiper-button-next {
@@ -67,9 +68,15 @@ function generateHead($page, $additionalCSS = []) {
             transform: translateY(-50%);
             color: #fff;
             background: #e2d703;
-            padding: 5px 10px;
+            padding: 0.5rem;
             border-radius: 10px;
-            width: 2rem;
+            width: 0.5rem;
+            height: 1rem;
+        }
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 1.2rem;
+            font-weight: 900;
         }
 
         @media (max-width: 768px) {

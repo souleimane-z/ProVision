@@ -14,9 +14,7 @@ function initNavigation() {
 }
 
 function initSwipers() {
-    const swiperConfig = {
-        slidesPerView: 1,
-        spaceBetween: 30,
+    const commonConfig = {
         loop: true,
         pagination: {
             el: ".swiper-pagination",
@@ -29,18 +27,34 @@ function initSwipers() {
         speed: 800
     };
 
+    const cardSwiperConfig = {
+        ...commonConfig,
+        slidesPerView: 1,
+        spaceBetween: 30,
+    };
+
+    const genreSwiperConfig = {
+        ...commonConfig,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            ...commonConfig.navigation,
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
+    };
+
     if (document.querySelector('.newMoviesSwiper')) {
-        new Swiper('.newMoviesSwiper', swiperConfig);
+        new Swiper('.newMoviesSwiper', cardSwiperConfig);
     }
     if (document.querySelector('.newShowsSwiper')) {
-        new Swiper('.newShowsSwiper', swiperConfig);
+        new Swiper('.newShowsSwiper', cardSwiperConfig);
     }
     if (document.querySelector('.trendingSwiper')) {
-        new Swiper('.trendingSwiper', swiperConfig);
+        new Swiper('.trendingSwiper', cardSwiperConfig);
     }
-
     if (document.querySelector('.genreSwiper')) {
-        new Swiper('.genreSwiper', swiperConfig);
+        new Swiper('.genreSwiper', genreSwiperConfig);
     }
 }
 
