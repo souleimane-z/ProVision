@@ -15,7 +15,7 @@ ProVision est une plateforme de vidéo à la demande (VOD) permettant aux utilis
 
 ---
 
-## 📁 Architecture du projet
+## 🌐 Démon Live
 Vous pouvez retrouver une démo live du site hébergé par InfinityFree.
 
 [ProVision](http://provision.kesug.com/)
